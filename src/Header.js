@@ -11,7 +11,7 @@ export default class Header extends React.Component {
                     <img src="img/logo.png" alt=""/>
                   </a>
                 </div>
-                <div className="col-6 col-lg-10">
+                <div className="col-6 col-lg-10 mt-auto mb-auto">
                   <div className="user-panel pull-right">
                     <div className="up-item">
                       <div className="shopping-card">

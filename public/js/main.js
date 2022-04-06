@@ -38,6 +38,9 @@ $(window).on('load', function() {
 		$(this).css('background-image', 'url(' + bg + ')');
 	});
 
+	$('body').css('background', 'url(\'img/background.jpg\') repeat-y');
+	$('body').css('background-size', '100%');
+
 
 
 	/*------------------
