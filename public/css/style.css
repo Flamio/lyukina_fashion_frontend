@@ -10,10 +10,24 @@
 /* Template default CSS
 /*----------------------------------------*/
 
+@font-face {
+	font-family: 'L&C Hairline HQ';
+	src: url('../fonts/LCHairlineHQ.eot');
+	src: url('../fonts/LCHairlineHQ.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/LCHairlineHQ.woff2') format('woff2'),
+	url('../fonts/LCHairlineHQ.woff') format('woff'),
+	url('../fonts/LCHairlineHQ.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+
 html,
 body {
 	height: 100%;
-	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto';
 	-webkit-font-smoothing: antialiased;
 	font-smoothing: antialiased;
 }
@@ -54,7 +68,7 @@ h6 {
 }
 
 p {
-	font-size: 14px;
+	font-size: 30px;
 	color: #585858;
 	line-height: 1.6;
 }
@@ -85,6 +99,8 @@ a:focus {
 	text-decoration: none;
 	outline: none;
 }
+
+
 
 ul,
 ol {
@@ -179,7 +195,7 @@ ol {
 
 /* Preloder */
 
-#preloder {
+.preloder {
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -422,30 +438,57 @@ ol {
 	background: #282828;
 }
 
+.main-navbar .flaticon-menu {
+	color: white;
+	font-size: 30px;
+	text-align: center;
+}
+
+
+.main-navbar .flaticon-menu:hover {
+	color: #f51167;
+	font-size: 30px;
+}
+
 .slicknav_menu {
 	display: none;
 }
 
-.main-menu {
-	list-style: none;
+.menu-toggler {
+	display: none;
+	text-align: center;
 }
 
-.main-menu li {
+.main-menu {
+
+	transition-property: height, opacity;
+	transition-duration: 300ms;
+	opacity: 1;
+	height: 50px;
+}
+
+.main-menu.hidden {
+	opacity: 0;
+	height: 0;
+}
+
+
+.main-menu div {
 	display: inline-block;
 	position: relative;
+	text-align: center;
 }
 
-.main-menu li a {
+.main-menu div a {
 	display: inline-block;
 	font-size: 16px;
 	color: #ffffff;
-	margin-right: 50px;
 	line-height: 1;
 	padding: 17px 0;
 	position: relative;
 }
 
-.main-menu li a .new {
+.main-menu div a .new {
 	position: absolute;
 	top: -8px;
 	font-size: 10px;
@@ -460,13 +503,13 @@ ol {
 	width: 42px;
 }
 
-.main-menu li:hover .sub-menu {
+.main-menu div:hover .sub-menu {
 	visibility: visible;
 	opacity: 1;
 	margin-top: 0;
 }
 
-.main-menu li:hover>a {
+.main-menu div:hover>a {
 	color: #f51167;
 }
 
@@ -2190,6 +2233,8 @@ ol {
 	height: 100%;
 }
 
+
+
 /* ----------------
   Responsive
 ---------------------*/
@@ -2249,9 +2294,6 @@ ol {
 	.sub-menu {
 		text-align: left;
 	}
-	.main-menu li a {
-		margin-right: 30px;
-	}
 	.hero-slider .slider-nav-warp {
 		max-width: 690px;
 	}
@@ -2303,7 +2345,7 @@ ol {
 		text-align: center;
 	}
 	.main-menu {
-		display: none;
+		text-align: center;
 	}
 	.slicknav_btn {
 		background-color: #565656;
@@ -2396,6 +2438,15 @@ ol {
 /* Small Mobile :320px. */
 
 @media only screen and (max-width: 479px) {
+
+	.menu-toggler {
+		display: block;
+	}
+
+	.main-menu {
+		height: 320px;
+	}
+
 	.hero-slider .slider-nav-warp {
 		max-width: 510px;
 		padding: 0 15px;

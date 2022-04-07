@@ -1,0 +1,13 @@
+
+<svg width="30.379mm" height="30.379mm" version="1.1" viewBox="0 0 30.379 30.379" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <linearGradient id="linearGradient21082" x1="22.775" x2="44.859" y1="26.194" y2="26.194" gradientTransform="translate(.1787)" gradientUnits="userSpaceOnUse">
+   <stop stop-color="#fff" offset="0"/>
+   <stop stop-color="#fff" stop-opacity="0" offset="1"/>
+  </linearGradient>
+ </defs>
+ <g transform="translate(-18.495 -11.884)">
+  <circle cx="33.685" cy="27.073" r="15.19" fill-rule="evenodd" stroke-width=".26458"/>
+  <text x="34.001923" y="24.443119" fill="#ffffff" font-family="'Usually-font'" font-size="7.0768px" font-weight="500" stroke="url(#linearGradient21082)" stroke-width=".17692" text-align="center" text-anchor="middle" style="line-height:1.25" xml:space="preserve"><tspan x="34.001923" y="24.443119" text-align="center">Lyukina</tspan><tspan x="34.001923" y="33.289082" text-align="center">Fashion</tspan></text>
+ </g>
+</svg>

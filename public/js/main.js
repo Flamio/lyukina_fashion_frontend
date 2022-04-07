@@ -10,6 +10,7 @@
 
 
 $(window).on('load', function() {
+
 	$(".cart-table-warp, .product-thumbs").niceScroll({
 		cursorborder:"",
 		cursorcolor:"#afafaf",
@@ -201,6 +202,8 @@ $(window).on('load', function() {
 
 	$('.product-pic-zoom').zoom();
 
+	$(".loader").fadeOut();
+	$(".preloder").delay(400).fadeOut("slow");
 
 });
 

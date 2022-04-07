@@ -1,26 +1,21 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import MainCarousel from "./MainCarousel";
 import Header from "./Header";
 import NewsCarousel from "./NewsCarousel";
 import Products from "./Products";
 import Footer from "./Footer";
+import Loader from './Loader'
+import ContactsModal from "./ContactsModal";
 
-class Main extends React.Component{
+export default function Main() {
 
-  componentDidMount () {
-  }
-
-  render() {
-    return (
-        <div>
-          <Header/>
-          <MainCarousel/>
-          <NewsCarousel/>
-          <Products/>
-          <Footer/>
-        </div>
-    );
-  }
+  return (<div>
+    <Header/>
+    <MainCarousel/>
+    <NewsCarousel/>
+    <Products/>
+    <Footer/>
+    <Loader/>
+    <ContactsModal/>
+  </div>)
 }
-
-export default Main;
