@@ -27,7 +27,15 @@
       "picture": "img/product/4.jpg",
       "price": 7000.0,
       "new": true
+    },
+    {
+      "id": 5,
+      "name": "Платье 5",
+      "picture": "img/product/5.jpg",
+      "price": 8000.0,
+      "new": true
     }
+
   ],
   "other": [
     {

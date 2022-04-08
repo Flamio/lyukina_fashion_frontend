@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
-import MainCarousel from "./MainCarousel";
+import MainCarousel from "./carousels/MainCarousel";
 import Header from "./Header";
-import NewsCarousel from "./NewsCarousel";
+import NewsCarousel from "./carousels/NewsCarousel";
 import Products from "./Products";
 import Footer from "./Footer";
 import Loader from './Loader'
