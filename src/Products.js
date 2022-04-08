@@ -1,10 +1,18 @@
 import React from "react";
 import ProductItem from "./ProductItem";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {ProductsActions} from "./actions";
 
 export const Products = () => {
 
   const allProducts = useSelector(state => state.products.other)
+  const more = useSelector(state => state.products.more)
+  const dispatcher = useDispatch()
+
+  const handleProductsMore = (event) => {
+    dispatcher(ProductsActions.getProductsMore())
+    event.preventDefault()
+  }
 
   return (<section className="product-filter-section">
         <div className="container">
@@ -21,13 +29,15 @@ export const Products = () => {
           <div className="row">
 
             {allProducts.map(
-                p => (<ProductItem isNew={p.new} key={p.id} picture={p.picture} description={p.name}
+                p => (<ProductItem isNew={p.new} key={p.id} picture={p.picture}
+                                   description={p.name}
                                    price={p.price}
                                    grid="col-lg-3 col-sm-6"/>))}
           </div>
-          <div className="text-center pt-5">
+          {more && <div className="text-center pt-5" onClick={handleProductsMore}>
             <button className="site-btn sb-line sb-dark">ЕЩЕ</button>
-          </div>
+          </div>}
+
         </div>
       </section>
   )

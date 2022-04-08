@@ -7,7 +7,14 @@ export const ProductsReducer = (state = {other: [], new: []}, action) => {
       return {
         ...state,
         other: action.products.other,
-        new: action.products.new
+        new: action.products.new,
+        more: action.products.more
+      }
+    case ProductsConstants.GET_MORE:
+      return {
+        ...state,
+        other: state.other.concat(action.products.products),
+        more: action.products.more
       }
 
     default:

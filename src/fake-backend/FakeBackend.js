@@ -1,4 +1,5 @@
 import products from './stub/products.json'
+import moreProductsJson from './stub/more_products.json'
 
 export function configureFakeBackend() {
   let realFetch = window.fetch;
@@ -15,6 +16,9 @@ export function configureFakeBackend() {
           case url.endsWith('/products') && method === 'GET':
             console.log("fetch")
             return getProducts();
+          case url.endsWith('/products/more') && method === 'GET':
+            console.log("fetch")
+            return moreProducts();
           default:
             // pass through any requests not handled above
             return realFetch(url, opts)
@@ -24,6 +28,10 @@ export function configureFakeBackend() {
       }
 
       // route functions
+
+      function moreProducts() {
+        return ok(moreProductsJson)
+      }
 
       function getProducts() {
         return ok(products);

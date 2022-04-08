@@ -1,7 +1,8 @@
 import {Urls} from "../constants";
 
 export const ProductsService = {
-  getAll
+  getAll,
+  getMore
 };
 
 function getAll() {
@@ -10,6 +11,14 @@ function getAll() {
   };
 
   return fetch(Urls.PRODUCTS, requestOptions).then(handleResponse);
+}
+
+function getMore() {
+  const requestOptions = {
+    method: 'GET',
+  };
+
+  return fetch(Urls.PRODUCTS + "/more", requestOptions).then(handleResponse);
 }
 
 

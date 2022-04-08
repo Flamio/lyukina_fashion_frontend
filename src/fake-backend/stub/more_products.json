@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "id": 9,
+      "name": "Платье 7",
+      "picture": "img/product/9.jpg",
+      "price": 9000.0,
+      "new": false
+    },
+    {
+      "id": 10,
+      "name": "Платье 8",
+      "picture": "img/product/10.jpg",
+      "price": 8000.0,
+      "new": false
+    },
+    {
+      "id": 11,
+      "name": "Платье 9",
+      "picture": "img/product/11.jpg",
+      "price": 9000.0,
+      "new": false
+    }
+  ],
+  "more": false
+}
