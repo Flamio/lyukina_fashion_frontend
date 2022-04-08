@@ -1,7 +1,8 @@
 import React from "react";
-import ProductItem from "./ProductItem";
+import ProductItem from "../../ProductItem";
 import {useDispatch, useSelector} from "react-redux";
-import {ProductsActions} from "./actions";
+import {ProductsActions} from "../../actions";
+import './Products.css'
 
 export const Products = () => {
 

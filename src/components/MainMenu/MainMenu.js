@@ -1,5 +1,5 @@
 import {useDispatch} from "react-redux";
-import {ModalWindowActions} from "../actions";
+import {ModalWindowActions} from "../../actions";
 import {useState} from "react";
 import './MainMenu.css'
 
