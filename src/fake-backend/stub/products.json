@@ -1,0 +1,90 @@
+{
+  "new": [
+    {
+      "id": 1,
+      "name": "Платье 1",
+      "picture": "img/product/1.jpg",
+      "price": 5000.0,
+      "new": true
+    },
+    {
+      "id": 2,
+      "name": "Платье 2",
+      "picture": "img/product/2.jpg",
+      "price": 5000.0,
+      "new": true
+    },
+    {
+      "id": 3,
+      "name": "Платье 3",
+      "picture": "img/product/3.jpg",
+      "price": 6000.0,
+      "new": true
+    },
+    {
+      "id": 4,
+      "name": "Платье 4",
+      "picture": "img/product/4.jpg",
+      "price": 7000.0,
+      "new": true
+    }
+  ],
+  "other": [
+    {
+      "id": 1,
+      "name": "Платье 1",
+      "picture": "img/product/1.jpg",
+      "price": 5000.0,
+      "new": true
+    },
+    {
+      "id": 2,
+      "name": "Платье 2",
+      "picture": "img/product/2.jpg",
+      "price": 5000.0,
+      "new": true
+    },
+    {
+      "id": 3,
+      "name": "Платье 3",
+      "picture": "img/product/3.jpg",
+      "price": 6000.0,
+      "new": true
+    },
+    {
+      "id": 4,
+      "name": "Платье 4",
+      "picture": "img/product/4.jpg",
+      "price": 7000.0,
+      "new": true
+    },
+    {
+      "id": 5,
+      "name": "Платье 5",
+      "picture": "img/product/5.jpg",
+      "price": 8000.0,
+      "new": false
+    },
+    {
+      "id": 6,
+      "name": "Платье 6",
+      "picture": "img/product/6.jpg",
+      "price": 9000.0,
+      "new": false
+    },
+    {
+      "id": 7,
+      "name": "Платье 7",
+      "picture": "img/product/7.jpg",
+      "price": 8000.0,
+      "new": false
+    },
+    {
+      "id": 8,
+      "name": "Платье 8",
+      "picture": "img/product/8.jpg",
+      "price": 9000.0,
+      "new": false
+    }
+  ]
+}

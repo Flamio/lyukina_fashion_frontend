@@ -6,8 +6,16 @@ import Products from "./Products";
 import Footer from "./Footer";
 import Loader from './Loader'
 import ContactsModal from "./ContactsModal";
+import {useDispatch} from "react-redux";
+import {ProductsActions} from "./actions";
 
 export default function Main() {
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(ProductsActions.getAll())
+  },[])
 
   return (<div>
     <Header/>
