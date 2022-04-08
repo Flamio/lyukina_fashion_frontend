@@ -1,9 +1,14 @@
 import React from "react";
+import {useSelector} from "react-redux";
 
-export default function Loader() {
+export const Loader = () => {
 
-  return (
+  const loading = useSelector(state => state.modalWindow.loading)
+
+  return ( loading &&
         <div className="preloder">
           <div className="loader"></div>
         </div>)
 }
+
+export default Loader

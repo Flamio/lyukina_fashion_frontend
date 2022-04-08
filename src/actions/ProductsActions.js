@@ -1,7 +1,8 @@
 import {ProductsConstants} from "../constants";
 import {ProductsService} from "../services";
+import {ModalWindowActions} from "./ModalWindowActions";
 
-export const ProductsActions =  {
+export const ProductsActions = {
   getAll,
   getProductsMore
 }
@@ -9,6 +10,7 @@ export const ProductsActions =  {
 function getAll() {
 
   const success = (products) => {
+
     return {
       type: ProductsConstants.GET_ALL,
       products
@@ -16,7 +18,10 @@ function getAll() {
   }
 
   return dispatch => {
-    ProductsService.getAll().then(products => dispatch(success(products)));
+    ProductsService.getAll().then(products => {
+      dispatch(ModalWindowActions.loading(false));
+      return dispatch(success(products))
+    })
   }
 }
 
@@ -30,6 +35,10 @@ function getProductsMore() {
   }
 
   return dispatch => {
-    ProductsService.getMore().then(products => dispatch(success(products)));
+    ProductsService.getMore().then(products => {
+          dispatch(ModalWindowActions.loading(false));
+          dispatch(success(products))
+        }
+    );
   }
 }

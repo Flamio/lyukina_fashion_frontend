@@ -1,7 +1,7 @@
 import React from "react";
 import ProductItem from "../../ProductItem";
 import {useDispatch, useSelector} from "react-redux";
-import {ProductsActions} from "../../actions";
+import {ModalWindowActions, ProductsActions} from "../../actions";
 import './Products.css'
 
 export const Products = () => {
@@ -11,6 +11,7 @@ export const Products = () => {
   const dispatcher = useDispatch()
 
   const handleProductsMore = (event) => {
+    dispatcher(ModalWindowActions.loading(true))
     dispatcher(ProductsActions.getProductsMore())
     event.preventDefault()
   }
