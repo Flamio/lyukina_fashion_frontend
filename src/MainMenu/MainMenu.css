@@ -1,0 +1,177 @@
+
+.mobile-menu {
+  display: none;
+}
+
+.large-menu {
+  display: block;
+}
+
+.main-menu {
+  list-style: none;
+  transition-property: height, opacity;
+  transition-duration: 300ms;
+  opacity: 1;
+  height: 50px;
+}
+
+.main-menu.hidden {
+  opacity: 0;
+  height: 0;
+}
+
+
+.main-menu div {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+}
+
+.main-menu div a {
+  display: inline-block;
+  font-size: 16px;
+  color: #ffffff;
+  line-height: 1;
+  padding: 17px 0;
+  position: relative;
+}
+
+.main-menu div a .new {
+  position: absolute;
+  top: -8px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #fff;
+  background: #f51167;
+  line-height: 1;
+  text-transform: uppercase;
+  left: calc(50% - 21px);
+  padding: 5px 9px 1px;
+  border-radius: 15px;
+  width: 42px;
+}
+
+.main-menu .menu-item:hover .sub-menu {
+  visibility: visible;
+  opacity: 1;
+  margin-top: 0;
+}
+
+.main-menu div:hover > a {
+  color: #f51167;
+}
+
+.main-menu .sub-menu {
+  position: absolute;
+  list-style: none;
+  width: 220px;
+  left: 0;
+  top: 100%;
+  padding: 20px 0;
+  visibility: hidden;
+  opacity: 0;
+  margin-top: 50px;
+  background: #fff;
+  z-index: 99;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 2px 7px 20px rgba(0, 0, 0, 0.05);
+}
+
+.main-menu .sub-menu li {
+  display: block;
+}
+
+.main-menu .sub-menu li a {
+  display: block;
+  color: #000;
+  margin-right: 0;
+  padding: 8px 20px;
+}
+
+.main-menu .sub-menu li a:hover {
+  color: #f51167;
+}
+
+.main-navbar {
+  background: #282828;
+}
+
+.main-navbar .flaticon-menu {
+  color: white;
+  font-size: 30px;
+  text-align: center;
+}
+
+
+.main-navbar .flaticon-menu:hover {
+  color: #f51167;
+  font-size: 30px;
+}
+
+/* Tablet :768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .menu-toggler {
+    display: block;
+  }
+
+  .main-menu {
+    text-align: center;
+  }
+
+  .main-menu {
+    height: 320px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+  .large-menu {
+    display: none;
+  }
+}
+
+/* Large Mobile :480px. */
+
+@media only screen and (max-width: 767px) {
+  .menu-toggler {
+    display: block;
+  }
+
+  .main-menu {
+    text-align: center;
+  }
+
+  .main-menu {
+    height: 320px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+  .large-menu {
+    display: none;
+  }
+}
+
+/* Small Mobile :320px. */
+
+@media only screen and (max-width: 479px) {
+  .menu-toggler {
+    display: block;
+  }
+
+  .main-menu {
+    height: 320px;
+  }
+
+  .mobile-menu {
+    display: block;
+  }
+  .large-menu {
+    display: none;
+  }
+}

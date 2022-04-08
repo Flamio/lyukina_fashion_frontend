@@ -10,7 +10,7 @@ export default class MainCarousel extends React.Component {
                           header="Новое поступление!!" description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"/>
       </div>
       <div className="container">
-        <div className="slide-num-holder" id="snh-1"></div>
+        <div className="slide-num-holder" id="snh-1"/>
       </div>
     </section>)
   }
