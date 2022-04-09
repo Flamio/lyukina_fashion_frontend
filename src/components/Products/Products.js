@@ -1,8 +1,12 @@
-import React from "react";
+import React, {useState} from "react";
 import ProductItem from "../../ProductItem";
 import {useDispatch, useSelector} from "react-redux";
 import {ProductsActions} from "../../actions";
 import './Products.css'
+import ReactCssTransitionGroup, {
+  CSSTransition,
+  TransitionGroup
+} from 'react-transition-group'
 
 export const Products = () => {
 
@@ -10,7 +14,10 @@ export const Products = () => {
   const more = useSelector(state => state.products.more)
   const dispatcher = useDispatch()
 
+  const [load, setLoad] = useState(false)
+
   const handleProductsMore = (event) => {
+    setLoad(true)
     dispatcher(ProductsActions.getProductsMore())
     event.preventDefault()
   }
@@ -27,14 +34,19 @@ export const Products = () => {
             <li><a href="#">JUMPERS</a></li>
             <li><a href="#">LEGGINGS</a></li>
           </ul>
-          <div className="row">
+          <TransitionGroup className="row">
             {allProducts.map(
-                p => (<ProductItem isNew={p.new} key={p.id} picture={p.picture}
+                p => (
+                    <CSSTransition timeout={700} key={p.id}
+                                   classNames={"product-items"}>
+                      <ProductItem isNew={p.new} key={p.id} picture={p.picture}
                                    description={p.name}
                                    price={p.price}
-                                   grid="col-lg-3 col-sm-6"/>))}
-          </div>
-          {more && <div className="text-center pt-5" onClick={handleProductsMore}>
+                                   grid="col-lg-3 col-sm-6"/>
+                    </CSSTransition>))}
+          </TransitionGroup>
+          {more && <div className="text-center pt-5"
+                        onClick={handleProductsMore}>
             <button className="site-btn sb-line sb-dark">ЕЩЕ</button>
           </div>}
 
