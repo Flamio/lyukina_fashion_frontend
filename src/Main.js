@@ -4,7 +4,7 @@ import Header from "./Header";
 import NewsCarousel from "./components/carousels/NewsCarousel";
 import Products from "./components/Products/Products";
 import Footer from "./Footer";
-import Loader from './Loader'
+import Loader from './components/Loader/Loader'
 import ContactsModal from "./ContactsModal";
 import {useDispatch} from "react-redux";
 import {ProductsActions} from "./actions";

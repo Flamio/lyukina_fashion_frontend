@@ -1,0 +1,14 @@
+.loader-transitions-enter {
+  opacity: 0;
+}
+.loader-transitions-enter-active {
+  opacity: 1;
+  transition: opacity 500ms;
+}
+.loader-transitions-exit {
+  opacity: 1;
+}
+.loader-transitions-exit-active {
+  opacity: 0;
+  transition: opacity 500ms;
+}

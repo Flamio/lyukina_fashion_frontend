@@ -1,7 +1,7 @@
 import React from "react";
 import ProductItem from "../../ProductItem";
 import {useDispatch, useSelector} from "react-redux";
-import {ModalWindowActions, ProductsActions} from "../../actions";
+import {ProductsActions} from "../../actions";
 import './Products.css'
 
 export const Products = () => {
@@ -11,7 +11,6 @@ export const Products = () => {
   const dispatcher = useDispatch()
 
   const handleProductsMore = (event) => {
-    dispatcher(ModalWindowActions.loading(true))
     dispatcher(ProductsActions.getProductsMore())
     event.preventDefault()
   }
@@ -29,7 +28,6 @@ export const Products = () => {
             <li><a href="#">LEGGINGS</a></li>
           </ul>
           <div className="row">
-
             {allProducts.map(
                 p => (<ProductItem isNew={p.new} key={p.id} picture={p.picture}
                                    description={p.name}
