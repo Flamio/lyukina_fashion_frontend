@@ -11,6 +11,7 @@ export const ProductsReducer = (state = {other: [], new: []}, action) => {
         more: action.products.more
       }
     case ProductsConstants.GET_MORE:
+      console.log(state)
       return {
         ...state,
         other: state.other.concat(action.products.products),

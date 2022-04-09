@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import ProductItem from "../../ProductItem";
 import {useDispatch, useSelector} from "react-redux";
 import {ProductsActions} from "../../actions";
@@ -7,6 +7,7 @@ import ReactCssTransitionGroup, {
   CSSTransition,
   TransitionGroup
 } from 'react-transition-group'
+import LoaderIcon from "../Loader/LoaderIcon";
 
 export const Products = () => {
 
@@ -18,6 +19,7 @@ export const Products = () => {
 
   const handleProductsMore = (event) => {
     setLoad(true)
+    console.log(load)
     dispatcher(ProductsActions.getProductsMore())
     event.preventDefault()
   }
@@ -37,8 +39,9 @@ export const Products = () => {
           <TransitionGroup className="row">
             {allProducts.map(
                 p => (
-                    <CSSTransition timeout={700} key={p.id}
-                                   classNames={"product-items"}>
+                    <CSSTransition timeout={2000} key={p.id}
+                                   classNames={"product-items"}
+                    onEnter={() => setLoad(false)}>
                       <ProductItem isNew={p.new} key={p.id} picture={p.picture}
                                    description={p.name}
                                    price={p.price}
@@ -47,7 +50,9 @@ export const Products = () => {
           </TransitionGroup>
           {more && <div className="text-center pt-5"
                         onClick={handleProductsMore}>
-            <button className="site-btn sb-line sb-dark">ЕЩЕ</button>
+            <button className="site-btn sb-line sb-dark">
+              { load ? <LoaderIcon/> : "ЕЩЕ" }
+            </button>
           </div>}
 
         </div>

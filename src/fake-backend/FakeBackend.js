@@ -30,6 +30,11 @@ export function configureFakeBackend() {
       // route functions
 
       function moreProducts() {
+        const products = moreProductsJson.products.map((p) => {
+          p.id = Math.random();
+          return p;
+        })
+        moreProductsJson.products = products
         return ok(moreProductsJson)
       }
 

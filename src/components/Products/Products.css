@@ -7,12 +7,12 @@
 }
 .product-items-enter-active {
   opacity: 1;
-  transition: opacity 700ms;
+  transition: opacity 2000ms;
 }
 .product-items-exit {
   opacity: 1;
 }
 .product-items-exit-active {
   opacity: 0;
-  transition: opacity 700ms;
+  transition: opacity 2000ms;
 }
