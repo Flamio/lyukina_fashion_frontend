@@ -4,7 +4,6 @@ import Header from "./Header";
 import NewsCarousel from "./components/carousels/NewsCarousel";
 import Products from "./components/Products/Products";
 import Footer from "./Footer";
-import Loader from './components/Loader/Loader'
 import ContactsModal from "./ContactsModal";
 import {useDispatch} from "react-redux";
 import {ProductsActions} from "./actions";
@@ -15,15 +14,16 @@ export default function Main() {
 
   useEffect(() => {
     dispatch(ProductsActions.getAll())
-  },[])
+  }, [])
 
   return (<div>
     <Header/>
-    <MainCarousel/>
-    <NewsCarousel/>
-    <Products/>
+    <div className={"content-field"}>
+      <MainCarousel/>
+      <NewsCarousel/>
+      <Products/>
+    </div>
     <Footer/>
-    <Loader/>
     <ContactsModal/>
   </div>)
 }

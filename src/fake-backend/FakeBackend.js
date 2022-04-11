@@ -9,7 +9,7 @@ export function configureFakeBackend() {
 
     return new Promise((resolve, reject) => {
       // wrap in timeout to simulate server api call
-      setTimeout(handleRoute, 500);
+      setTimeout(handleRoute, 1000);
 
       function handleRoute() {
         switch (true) {

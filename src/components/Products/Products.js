@@ -3,7 +3,7 @@ import ProductItem from "../../ProductItem";
 import {useDispatch, useSelector} from "react-redux";
 import {ProductsActions} from "../../actions";
 import './Products.css'
-import ReactCssTransitionGroup, {
+import {
   CSSTransition,
   TransitionGroup
 } from 'react-transition-group'
