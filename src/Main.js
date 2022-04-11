@@ -24,6 +24,5 @@ export default function Main() {
       <Products/>
     </div>
     <Footer/>
-    <ContactsModal/>
   </div>)
 }

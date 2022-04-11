@@ -1,9 +1,37 @@
+import ReactOwlCarousel from "react-owl-carousel";
 
 const Product = () => {
+
+  const thumbsCarouselOptions = {
+    loop: false,
+    margin: 0,
+    nav: false,
+    items: 4,
+    dots: false,
+    animateOut: 'fadeOut',
+    animateIn: 'fadeIn',
+    smartSpeed: 1200,
+    autoplay: false,
+    responsive: {
+      0: {
+        items: 3,
+      },
+      480: {
+        items: 3,
+      },
+      768: {
+        items: 3,
+      },
+      1200: {
+        items: 4,
+      }
+    }
+  }
+
   return (<section className="product-section content-field">
     <div className="container">
       <div className="back-link">
-        <a href="#"> &lt;&lt; Назад</a>
+        <a href="#"> &lt;&lt; Назад в категорию</a>
       </div>
       <div className="row">
         <div className="col-lg-6">
@@ -13,7 +41,7 @@ const Product = () => {
           </div>
           <div className="product-thumbs" tabIndex="1"
                style={{overflow: "hidden", outline: "none"}}>
-            <div className="product-thumbs-track">
+            <ReactOwlCarousel className="product-thumbs-track" {...thumbsCarouselOptions}>
               <div className="pt active"
                    data-imgbigurl="img/product/1.jpg"><img
                   src="img/product/1.jpg" alt=""/></div>
@@ -23,7 +51,7 @@ const Product = () => {
                   src="img/product/3.jpg" alt=""/></div>
               <div className="pt" data-imgbigurl="img/product/3.jpg"><img
                   src="img/product/4.jpg" alt=""/></div>
-            </div>
+            </ReactOwlCarousel>
           </div>
         </div>
         <div className="col-lg-6 product-details">
