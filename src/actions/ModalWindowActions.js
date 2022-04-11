@@ -1,13 +1,15 @@
 import {ModalWindowConstants} from "../constants/ModalWindowConstants";
 
 export const ModalWindowActions = {
-  hide,
-  show,
+  contacts,
   loading,
 }
 
-function hide() {return {type: ModalWindowConstants.HIDE_CONTACTS}}
-function show() {return {type: ModalWindowConstants.SHOW_CONTACTS}}
+function contacts(state) {
+  return {type: ModalWindowConstants.CONTACTS, state}
+}
 
-function loading(state) { return {type: ModalWindowConstants.LOADING, state}}
+function loading(state) {
+  return {type: ModalWindowConstants.LOADING, state}
+}
 

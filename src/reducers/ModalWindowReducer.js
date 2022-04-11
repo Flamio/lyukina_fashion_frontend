@@ -2,16 +2,10 @@ import {ModalWindowConstants} from "../constants/ModalWindowConstants";
 
 export function ModalWindowReducer(state={contacts: false, loading: true}, action) {
   switch (action.type) {
-    case ModalWindowConstants.SHOW_CONTACTS:
+    case ModalWindowConstants.CONTACTS:
       return {
         ...state,
-        contacts: true
-      };
-
-    case ModalWindowConstants.HIDE_CONTACTS:
-      return {
-        ...state,
-        contacts: false
+        contacts: action.state
       };
 
     case ModalWindowConstants.LOADING:

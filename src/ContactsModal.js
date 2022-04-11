@@ -9,7 +9,7 @@ export default function ContactsModal() {
   const dispatch = useDispatch()
 
   const handleClose = () => {
-    dispatch(ModalWindowActions.hide())
+    dispatch(ModalWindowActions.contacts(false))
   }
 
 

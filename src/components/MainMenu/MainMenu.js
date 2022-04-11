@@ -8,7 +8,7 @@ export default function MainMenu() {
   const dispatch = useDispatch()
 
   const showContacts = (event) => {
-    dispatch(ModalWindowActions.show())
+    dispatch(ModalWindowActions.contacts(true))
     event.preventDefault()
   }
 
