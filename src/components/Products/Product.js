@@ -36,7 +36,7 @@ const Product = () => {
       <div className="row">
         <div className="col-lg-6">
           <div className="product-pic-zoom">
-            <img className="product-big-img" src="img/product/1.jpg"
+            <img className="product-big-img" src="/img/product/1.jpg"
                  alt=""/>
           </div>
           <div className="product-thumbs" tabIndex="1"
@@ -44,13 +44,13 @@ const Product = () => {
             <ReactOwlCarousel className="product-thumbs-track" {...thumbsCarouselOptions}>
               <div className="pt active"
                    data-imgbigurl="img/product/1.jpg"><img
-                  src="img/product/1.jpg" alt=""/></div>
-              <div className="pt" data-imgbigurl="img/product/1.jpg"><img
-                  src="img/product/2.jpg" alt=""/></div>
-              <div className="pt" data-imgbigurl="img/product/2.jpg"><img
-                  src="img/product/3.jpg" alt=""/></div>
-              <div className="pt" data-imgbigurl="img/product/3.jpg"><img
-                  src="img/product/4.jpg" alt=""/></div>
+                  src="/img/product/1.jpg" alt=""/></div>
+              <div className="pt" data-imgbigurl="/img/product/1.jpg"><img
+                  src="/img/product/2.jpg" alt=""/></div>
+              <div className="pt" data-imgbigurl="/img/product/2.jpg"><img
+                  src="/img/product/3.jpg" alt=""/></div>
+              <div className="pt" data-imgbigurl="/img/product/3.jpg"><img
+                  src="/img/product/4.jpg" alt=""/></div>
             </ReactOwlCarousel>
           </div>
         </div>

@@ -18,7 +18,9 @@ render(
       <BrowserRouter>
         <Routes>
           <Route path={"/"} element={<Main/>}/>
-          <Route path={"/product"} element={<ProductPage/>} />
+          <Route path={"/product"} element={<ProductPage/>}>
+            <Route path={":id"} element={<ProductPage/>}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </Provider>,

@@ -19,7 +19,6 @@ export const Products = () => {
 
   const handleProductsMore = (event) => {
     setLoad(true)
-    console.log(load)
     dispatcher(ProductsActions.getProductsMore())
     event.preventDefault()
   }

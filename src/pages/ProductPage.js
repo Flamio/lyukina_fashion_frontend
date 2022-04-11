@@ -4,6 +4,7 @@ import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import {ModalWindowActions} from "../actions";
 import Product from "../components/Products/Product";
+import {useParams} from "react-router";
 
 const ProductPage = () => {
 
@@ -13,6 +14,8 @@ const ProductPage = () => {
         dispatch(ModalWindowActions.loading(false))
       }
   )
+
+  const params = useParams();
 
   return (
       <div>

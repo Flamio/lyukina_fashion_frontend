@@ -32,7 +32,7 @@ export const MainCarousel = () => {
         header="Новое поступление!!"
         description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"/>
 
-        <MainCarouselItem picture='img/bg.jpg' minPrice={5000}
+        <MainCarouselItem picture='/img/bg.jpg' minPrice={5000}
                           header="Новое поступление!!"
                           description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"/>
       </ReactOwlCarousel>
