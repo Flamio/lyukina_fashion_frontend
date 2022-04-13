@@ -4,17 +4,16 @@ import Header from "./Header";
 import NewsCarousel from "./components/carousels/NewsCarousel";
 import Products from "./components/Products/Products";
 import Footer from "./Footer";
-import ContactsModal from "./ContactsModal";
 import {useDispatch} from "react-redux";
-import {ProductsActions} from "./actions";
+import {MainPageActions} from "./actions";
 
 export default function Main() {
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(ProductsActions.getAll())
-  }, [])
+    dispatch(MainPageActions.getAll())
+  }, [dispatch])
 
   return (<div>
     <Header/>

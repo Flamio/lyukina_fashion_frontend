@@ -1,16 +1,15 @@
 import React from "react";
-import ProductItem from "../../ProductItem";
-import {useSelector} from "react-redux";
+import ProductItem from "../Products/ProductItem";
+import { useSelector } from "react-redux";
 import ReactOwlCarousel from "react-owl-carousel";
 
 import "owl.carousel/dist/assets/owl.carousel.css";
 import "owl.carousel/dist/assets/owl.theme.default.css";
 
-import './carousel.css'
+import "./carousel.css";
 
 export const NewsCarousel = () => {
-  const newProducts = useSelector(
-      state => state.products.new)
+  const newProducts = useSelector((state) => state.products.new);
 
   const options = {
     margin: 30,
@@ -19,8 +18,11 @@ export const NewsCarousel = () => {
     dots: false,
     loop: false,
     autoplay: true,
-    navText: ['<i class="flaticon-left-arrow-1"></i>',
-      '<i class="flaticon-right-arrow-1"></i>'],
+    center: true,
+    navText: [
+      '<i class="flaticon-left-arrow-1"></i>',
+      '<i class="flaticon-right-arrow-1"></i>',
+    ],
     responsive: {
       0: {
         items: 1,
@@ -33,30 +35,32 @@ export const NewsCarousel = () => {
       },
       1200: {
         items: 4,
-      }
-    }
+      },
+    },
   };
 
   return (
+    newProducts.length && (
       <section className="top-letest-product-section">
         <div className="container">
           <div className="section-title">
             <h2>НОВИНКИ</h2>
           </div>
-          {newProducts.length &&
-              <ReactOwlCarousel className="product-slider" {...options}>
-
-                {newProducts.map(
-                    p => (<ProductItem isNew={p.new} key={p.id}
-                                       picture={p.picture}
-                                       description={p.name}
-                                       price={p.price}/>))}
-
-              </ReactOwlCarousel>
-          }
+          <ReactOwlCarousel className="product-slider" {...options}>
+            {newProducts.map((p) => (
+              <ProductItem
+                isNew={p.new}
+                key={p.id}
+                picture={p.picture}
+                description={p.name}
+                price={p.price}
+              />
+            ))}
+          </ReactOwlCarousel>
         </div>
       </section>
-  )
-}
+    )
+  );
+};
 
-export default NewsCarousel
+export default NewsCarousel;

@@ -1,3 +1,3 @@
 export const Urls = {
-  PRODUCTS: "/api/products"
+  MAIN_PAGE_SERVICE_URL: "/api/main"
 }

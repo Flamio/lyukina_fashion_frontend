@@ -1,2 +1,2 @@
 export * from './ModalWindowActions'
-export * from './ProductsActions'
+export * from './MainPageActions'

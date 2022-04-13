@@ -724,7 +724,7 @@ ol {
 }
 
 .product-item .pi-links a.add-card span {
-	font-size: 12px;
+	font-size: 10px;
 	font-weight: bold;
 	text-transform: uppercase;
 	position: absolute;
@@ -734,7 +734,7 @@ ol {
 }
 
 .product-item .pi-links a.add-card:hover {
-	width: 148px;
+	width: 192px;
 	padding: 8px 18px 0;
 	text-align: left;
 }

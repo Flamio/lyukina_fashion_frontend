@@ -1,6 +1,6 @@
 import {Urls} from "../constants";
 
-export const ProductsService = {
+export const MainPageService = {
   getAll,
   getMore
 };
@@ -10,7 +10,7 @@ function getAll() {
     method: 'GET',
   };
 
-  return fetch(Urls.PRODUCTS + "?page=0", requestOptions).then(handleResponse);
+  return fetch(Urls.MAIN_PAGE_SERVICE_URL + "?productsPage=0", requestOptions).then(handleResponse);
 }
 
 function getMore() {
@@ -18,7 +18,7 @@ function getMore() {
     method: 'GET',
   };
 
-  return fetch(Urls.PRODUCTS + "/more", requestOptions).then(handleResponse);
+  return fetch(Urls.MAIN_PAGE_SERVICE_URL + "/more", requestOptions).then(handleResponse);
 }
 
 

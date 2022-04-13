@@ -12,7 +12,7 @@ export default class ProductItem extends React.Component {
               <img src={this.props.picture} alt=""/>
               <div className="pi-links">
                 <a href="#" className="add-card"><i
-                    className="flaticon-bag"/><span>КУПИТЬ</span></a>
+                    className="flaticon-bag"/><span>Добавить в корзину</span></a>
               </div>
             </div>
             <div className="pi-text">
