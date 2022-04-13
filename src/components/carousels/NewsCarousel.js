@@ -17,7 +17,7 @@ export const NewsCarousel = () => {
     responsiveClass: true,
     nav: true,
     dots: false,
-    loop: true,
+    loop: false,
     autoplay: true,
     navText: ['<i class="flaticon-left-arrow-1"></i>',
       '<i class="flaticon-right-arrow-1"></i>'],

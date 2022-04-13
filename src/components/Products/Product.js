@@ -1,4 +1,6 @@
 import ReactOwlCarousel from "react-owl-carousel";
+import {useEffect} from "react";
+import {useParams} from "react-router";
 
 const Product = () => {
 
@@ -27,6 +29,13 @@ const Product = () => {
       }
     }
   }
+
+  const params = useParams()
+
+  useEffect(() =>
+  {
+    console.log(params.id)
+  })
 
   return (<section className="product-section content-field">
     <div className="container">

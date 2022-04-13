@@ -1,3 +1,3 @@
 export const Urls = {
-  PRODUCTS: "/products"
+  PRODUCTS: "/api/products"
 }

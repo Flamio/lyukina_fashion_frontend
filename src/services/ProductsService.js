@@ -10,7 +10,7 @@ function getAll() {
     method: 'GET',
   };
 
-  return fetch(Urls.PRODUCTS, requestOptions).then(handleResponse);
+  return fetch(Urls.PRODUCTS + "?page=0", requestOptions).then(handleResponse);
 }
 
 function getMore() {
