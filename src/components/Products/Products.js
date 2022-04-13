@@ -20,6 +20,7 @@ export const Products = () => {
     event.preventDefault();
   };
 
+
   return (
     <section className="product-filter-section">
       <div className="container">
@@ -33,6 +34,7 @@ export const Products = () => {
               onEnter={() => setLoad(false)}
             >
               <ProductItem
+                id={p.id}
                 isNew={p.new}
                 key={p.id}
                 picture={p.picture}

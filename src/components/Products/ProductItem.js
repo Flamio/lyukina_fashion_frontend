@@ -1,25 +1,31 @@
 import React from "react";
 
-export default class ProductItem extends React.Component {
-  render() {
+const ProductItem = (props) => {
+
+  const clickHandler = (event) => {
+    window.location.href = "/product/"+props.id
+    event.preventDefault();
+  }
+
     return (
-        <div className={this.props.grid}>
+        <div className={props.grid ? props.grid : ""} onClick={clickHandler}>
           <div className="product-item">
             <div className="pi-pic">
 
-              {this.props.isNew && (<div className="tag-new">New</div>)}
+              {props.isNew && (<div className="tag-new">New</div>)}
 
-              <img src={this.props.picture} alt=""/>
+              <img src={props.picture} alt=""/>
               <div className="pi-links">
                 <a href="#" className="add-card"><i
                     className="flaticon-bag"/><span>Добавить в корзину</span></a>
               </div>
             </div>
             <div className="pi-text">
-              <h6>{this.props.price} ₽</h6>
-              <p>{this.props.description}</p>
+              <h6>{props.price} ₽</h6>
+              <p>{props.description}</p>
             </div>
           </div>
         </div>)
-  }
 }
+
+export default ProductItem
