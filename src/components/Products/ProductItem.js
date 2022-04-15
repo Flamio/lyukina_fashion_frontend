@@ -1,4 +1,6 @@
 import React from "react";
+import { useDispatch } from "react-redux";
+import { ModalWindowActions } from "../../actions";
 
 const ProductItem = (props) => {
 
@@ -7,9 +9,17 @@ const ProductItem = (props) => {
     event.preventDefault();
   }
 
+  const dispatch = useDispatch()
+
   const cartClickHandler = (event) => {
-    console.log(event)
     event.stopPropagation() 
+
+    console.log(event);
+    dispatch(ModalWindowActions.addToCart(true))
+
+    event.preventDefault()
+
+    return false
   }
 
     return (
