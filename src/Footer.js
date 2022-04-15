@@ -3,7 +3,7 @@ export default function Footer () {
   return(<section className="footer-section">
     <div className="container">
       <div className="footer-logo text-center">
-        <a href="index.html"><img src="/img/logo.png" alt=""/></a>
+        <a href="/"><img src="/img/logo.png" alt=""/></a>
       </div>
       <div className="row">
         <div className="col-lg-3 col-sm-12">

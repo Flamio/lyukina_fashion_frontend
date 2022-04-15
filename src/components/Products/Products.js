@@ -15,8 +15,8 @@ export const Products = () => {
   const [load, setLoad] = useState(false);
 
   const handleProductsMore = (event) => {
-    setLoad(true);
-    dispatcher(MainPageActions.getProductsMore());
+    // setLoad(true);
+    // dispatcher(MainPageActions.getProductsMore());
     event.preventDefault();
   };
 

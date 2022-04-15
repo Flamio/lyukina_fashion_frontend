@@ -3,8 +3,7 @@ import {MainPageService} from "../services";
 import {ModalWindowActions} from "./ModalWindowActions";
 
 export const MainPageActions = {
-  getAll,
-  getProductsMore
+  getAll
 }
 
 function getAll() {
@@ -34,23 +33,5 @@ function getAll() {
       dispatch(categoriesSuccess(mainPageDto))
       return dispatch(productsSuccess(mainPageDto))
     })
-  }
-}
-
-function getProductsMore() {
-
-  const success = (products) => {
-    return {
-      type: ProductsConstants.GET_MORE,
-      products
-    }
-  }
-
-  return dispatch => {
-    MainPageService.getMore().then(products => {
-          dispatch(ModalWindowActions.loading(false));
-          dispatch(success(products))
-        }
-    );
   }
 }

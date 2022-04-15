@@ -4,9 +4,9 @@ import { Provider } from "react-redux";
 import Main from "./Main";
 import { Store } from "./Store";
 import { configureFakeBackend } from "./fake-backend/FakeBackend";
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
+import { BrowserRouter,  Route, Routes } from 'react-router-dom'
 import Loader from "./components/Loader/Loader";
-import ProductPage from "./pages/ProductPage";
+import { ProductPage } from './pages/ProductPage';
 import ContactsModal from "./ContactsModal";
 
 render(

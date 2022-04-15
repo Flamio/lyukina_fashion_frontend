@@ -7,6 +7,11 @@ const ProductItem = (props) => {
     event.preventDefault();
   }
 
+  const cartClickHandler = (event) => {
+    console.log(event)
+    event.stopPropagation() 
+  }
+
     return (
         <div className={props.grid ? props.grid : ""} onClick={clickHandler}>
           <div className="product-item">
@@ -16,7 +21,7 @@ const ProductItem = (props) => {
 
               <img src={props.picture} alt=""/>
               <div className="pi-links">
-                <a href="#" className="add-card"><i
+                <a href="#" className="add-card" onClick={cartClickHandler}><i
                     className="flaticon-bag"/><span>Добавить в корзину</span></a>
               </div>
             </div>
