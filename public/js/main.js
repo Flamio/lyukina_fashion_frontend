@@ -17,15 +17,6 @@ $(window).on('load', function() {
 		boxzoom:false
 	});
 
-
-	/*------------------
-		Background Set
-	--------------------*/
-	$('.set-bg').each(function() {
-		var bg = $(this).data('setbg');
-		$(this).css('background-image', 'url(' + bg + ')');
-	});
-
 	$('body').css('background', 'url(\'/img/background.jpg\') repeat-y');
 	$('body').css('background-size', '100%');
 
