@@ -19,7 +19,7 @@ export const AddToCartModal = () => {
       <Modal.Body>Товар добавлен в корзину</Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
-          Закрыть
+          Продолжить покупки
         </Button>
         <Button variant="primary">Перейти в корзину</Button>
       </Modal.Footer>

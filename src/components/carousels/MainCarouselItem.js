@@ -3,7 +3,7 @@ import React from "react";
 export default class MainCarouselItem extends React.Component {
 
   render() {
-    return (<div className="hs-item set-bg" data-setbg={this.props.picture}>
+    return (<div className="hs-item set-bg" style={{background: "url(" + this.props.picture+")"}}>
       <div className="container">
         <div className="row">
           <div className="col-xl-6 col-lg-7 text-white">

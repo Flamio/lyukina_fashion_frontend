@@ -1,5 +1,6 @@
 import ReactOwlCarousel from "react-owl-carousel";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { CartActions } from "../../actions";
 
 const Product = () => {
   const thumbsCarouselOptions = {
@@ -28,6 +29,13 @@ const Product = () => {
       },
     },
   };
+
+  const dispatch = useDispatch()
+
+  const addToCartHandler = (event) => {
+    dispatch(CartActions.putProduct(product.id))
+    event.preventDefault()
+  }
 
   const product = useSelector((s) => s.products.current);
 
@@ -93,7 +101,7 @@ const Product = () => {
                 );
               })}
             </div>
-            <a href="#" className="site-btn">
+            <a href="#" className="site-btn" onClick={addToCartHandler}>
               Добавить в корзину
             </a>
             <div id="accordion" className="accordion-area">

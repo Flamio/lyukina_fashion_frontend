@@ -3,7 +3,7 @@ import MainMenu from "./components/MainMenu/MainMenu";
 
 const Header = () => {
 
-  const cart = useSelector(s => s.cart)
+  const cart = useSelector(s => { console.log(s); return s.cart })
 
   return (
     <header className="header-section">
