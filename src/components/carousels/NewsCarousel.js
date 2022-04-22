@@ -1,42 +1,26 @@
 import React from "react";
 import ProductItem from "../Products/ProductItem";
 import { useSelector } from "react-redux";
-import ReactOwlCarousel from "react-owl-carousel";
-
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
+import {useWindowWidth} from '@react-hook/window-size'
 
 import "./carousel.css";
+import { Carousel } from "react-responsive-carousel";
 
 export const NewsCarousel = () => {
   const newProducts = useSelector((state) => state.products.new);
 
-  const options = {
-    margin: 30,
-    responsiveClass: true,
-    nav: true,
-    dots: false,
-    loop: false,
-    autoplay: true,
-    center: true,
-    navText: [
-      '<i class="flaticon-left-arrow-1"></i>',
-      '<i class="flaticon-right-arrow-1"></i>',
-    ],
-    responsive: {
-      0: {
-        items: 1,
-      },
-      480: {
-        items: 2,
-      },
-      768: {
-        items: 3,
-      },
-      1200: {
-        items: 4,
-      },
-    },
+  const windowWidth = useWindowWidth()
+
+  const renderItem = (node, options) => {
+    return (
+        <ProductItem
+          id={node.props.id}
+          isNew={node.props.new}
+          picture={node.props.picture}
+          description={node.props.name}
+          price={node.props.price}
+        />
+    );
   };
 
   return (
@@ -46,17 +30,64 @@ export const NewsCarousel = () => {
           <div className="section-title">
             <h2>НОВИНКИ</h2>
           </div>
-          <ReactOwlCarousel className="product-slider" {...options}>
-            {newProducts.map((p) => (
-              <ProductItem
+          <Carousel
+            showStatus={false}
+            centerMode
+            centerSlidePercentage={windowWidth > 1290 ? 30 : 100}
+            emulateTouch
+            renderItem={renderItem}
+            showThumbs={false}
+            className="product-slider"
+          >
+            {newProducts.map((p, index) => (
+              <img
+                id={p.id}
+                src={p.picture}
                 isNew={p.new}
                 key={p.id}
                 picture={p.picture}
                 description={p.name}
                 price={p.price}
+                alt=""
               />
             ))}
-          </ReactOwlCarousel>
+            {newProducts.map((p, index) => (
+              <img
+                id={p.id}
+                src={p.picture}
+                isNew={p.new}
+                key={p.id}
+                picture={p.picture}
+                description={p.name}
+                price={p.price}
+                alt=""
+              />
+            ))}
+            {newProducts.map((p, index) => (
+              <img
+                id={p.id}
+                src={p.picture}
+                isNew={p.new}
+                key={p.id}
+                picture={p.picture}
+                description={p.name}
+                price={p.price}
+                alt=""
+              />
+            ))}
+            {newProducts.map((p, index) => (
+              <img
+                id={p.id}
+                src={p.picture}
+                isNew={p.new}
+                key={p.id}
+                picture={p.picture}
+                description={p.name}
+                price={p.price}
+                alt=""
+              />
+            ))}
+          </Carousel>
         </div>
       </section>
     )

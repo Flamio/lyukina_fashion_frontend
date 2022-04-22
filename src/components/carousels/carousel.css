@@ -1,78 +1,39 @@
-.product-slider .owl-nav {
-  position: absolute;
-  top: calc(50% - 60px);
-  width: 100%;
-  left: 0;
-}
 
-.product-slider .owl-nav button.owl-next,
-.product-slider .owl-nav button.owl-prev {
-  color: #a4a4a4;
-  font-size: 42px;
-  position: relative;
-}
 
-.product-slider .owl-nav button.owl-next {
-  float: right;
-  right: -92px;
-}
-
-.product-slider .owl-nav button.owl-prev {
-  float: left;
-  left: -92px;
-}
-
-.hero-slider .owl-nav button.owl-next,
-.hero-slider .owl-nav button.owl-prev {
-  font-size: 27px;
-  position: absolute;
-  color: #fff;
-  opacity: 0.5;
-  bottom: 30px;
-}
-
-.hero-slider .owl-nav button.owl-next {
-  margin-left: 150px;
-}
-
-.hero-slider .owl-nav button.owl-prev {
-  margin-left: 100px;
-}
-
-.hero-slider .owl-item.active .hs-item h2,
-.hero-slider .owl-item.active .hs-item span,
-.hero-slider .owl-item.active .hs-item p,
-.hero-slider .owl-item.active .hs-item .site-btn {
+.hero-slider .selected .hs-item h2,
+.hero-slider .selected .hs-item span,
+.hero-slider .selected .hs-item p,
+.hero-slider .selected .hs-item .site-btn {
   top: 0;
   opacity: 1;
 }
 
-.hero-slider .owl-item.active .hs-item span {
+.hero-slider .selected .hs-item span {
   -webkit-transition: all 0.5s ease 0.2s;
   -o-transition: all 0.5s ease 0.2s;
   transition: all 0.5s ease 0.2s;
 }
 
-.hero-slider .owl-item.active .hs-item h2 {
+.hero-slider .selected .hs-item h2 {
   -webkit-transition: all 0.5s ease 0.4s;
   -o-transition: all 0.5s ease 0.4s;
   transition: all 0.5s ease 0.4s;
 }
 
-.hero-slider .owl-item.active .hs-item p {
+.hero-slider .selected .hs-item p {
   -webkit-transition: all 0.5s ease 0.6s;
   -o-transition: all 0.5s ease 0.6s;
   transition: all 0.5s ease 0.6s;
 }
 
-.hero-slider .owl-item.active .hs-item .site-btn {
+.hero-slider .selected .hs-item .site-btn {
   -webkit-transition: all 0.5s ease 0.8s;
   -webkit-transition: all 0.5s ease 0.8s;
   -o-transition: all 0.5s ease 0.8s;
   transition: all 0.5s ease 0.8s;
 }
 
-.hero-slider .owl-item.active .hs-item .offer-card {
+.hero-slider .selected .hs-item .offer-card {
   opacity: 1;
   -webkit-transform: rotate(0deg);
   -ms-transform: rotate(0deg);
@@ -83,18 +44,20 @@
   transition: all 0.5s ease 1s;
 }
 
-@media (max-width: 1350px) {
-  .product-slider .owl-nav {
-    position: relative;
-    left: 0;
-    top: 0;
-    text-align: center;
-  }
-  .product-slider .owl-nav button.owl-prev,
-  .product-slider .owl-nav button.owl-next {
-    float: none;
-    left: 0;
-    right: 0;
-    margin: 0 10px;
-  }
+.product-slider .carousel .control-dots .dot {
+  width: 15px;
+  height: 15px;
+  opacity: 0.5;
+  background: #000;
 }
+
+.product-slider .carousel .control-dots .dot.selected{
+  opacity: 1;
+  background: #f51167;
+}
+
+.product-slider .carousel .control-dots {
+  margin: 0;
+}
+
+
