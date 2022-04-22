@@ -1,38 +1,12 @@
-import ReactOwlCarousel from "react-owl-carousel";
+import { Carousel } from "react-responsive-carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../../actions";
 import InnerImageZoom from "react-inner-image-zoom";
+
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
-import { useState } from "react";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 const Product = () => {
-  const thumbsCarouselOptions = {
-    loop: false,
-    margin: 0,
-    nav: false,
-    items: 4,
-    dots: false,
-    animateOut: "fadeOut",
-    animateIn: "fadeIn",
-    smartSpeed: 1200,
-    autoplay: false,
-    stagePadding: 10,
-    responsive: {
-      0: {
-        items: 3,
-      },
-      480: {
-        items: 3,
-      },
-      768: {
-        items: 3,
-      },
-      1200: {
-        items: 4,
-      },
-    },
-  };
-
   const dispatch = useDispatch();
 
   const addToCartHandler = (event) => {
@@ -42,16 +16,24 @@ const Product = () => {
 
   const product = useSelector((s) => s.products.current);
 
-  const [currentPictureIndex, setCurrentPictureIndex] = useState(0)
-
   const thumbs = product.thumbs ? product.thumbs.trim().split(",") : [];
   const bigPics = product.thumbs ? product.big_pics.trim().split(",") : [];
   const sizes = product.sizes ? product.sizes : [];
 
-  const onThumbClickHandler = (event) => {
-    setCurrentPictureIndex(event.target.id)
-    event.preventDefault()
-  }
+  const onRenderItem = (item, options) => {
+    const index = item.props.id;
+
+    return (
+      <InnerImageZoom
+        src={thumbs[index]}
+        zoomSrc={bigPics[index]}
+        zoomScale={0.7}
+        fullscreenOnMobile={true}
+        mobileBreakpoint={990}
+        zoomType={"hover"}
+      />
+    );
+  };
 
   return (
     <section className="product-section content-field">
@@ -61,41 +43,15 @@ const Product = () => {
         </div>
         <div className="row">
           <div className="col-lg-6">
-            <div className="product-pic-zoom">
-              <InnerImageZoom
-                src={thumbs[currentPictureIndex]}
-                zoomSrc={bigPics[currentPictureIndex]}
-                zoomScale={0.7}
-                fullscreenOnMobile={true}
-                mobileBreakpoint={990}
-                zoomType={"hover"}
-              />
-            </div>
-            <div
-              className="product-thumbs"
-              tabIndex="1"
-              style={{ overflow: "hidden", outline: "none" }}
-            >
-              {thumbs.length && (
-                <ReactOwlCarousel
-                  className="product-thumbs-track"
-                  {...thumbsCarouselOptions}
-                >
-                  {thumbs.map((th, index) => {
-                    return (
-                      <div
-                        key={index}
-                        className={`pt ${Number(index) === Number(currentPictureIndex) ? "active" : ""}`}
-                        >
-                          {console.log(index)}
-                          {console.log(currentPictureIndex)}
-                          <img id={index} onClick={onThumbClickHandler} src={th} alt="" />
-                      </div>
-                    );
-                  })}
-                </ReactOwlCarousel>
-              )}
-            </div>
+            <Carousel renderItem={onRenderItem} showStatus={false}>
+              {thumbs.map((th, index) => {
+                return (
+                  <div key={index} id={index}>
+                    <img id={index} src={th} alt="" />
+                  </div>
+                );
+              })}
+            </Carousel>
           </div>
           <div className="col-lg-6 product-details">
             <h2 className="p-title">{product.name}</h2>
