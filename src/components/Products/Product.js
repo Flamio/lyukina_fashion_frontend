@@ -6,6 +6,8 @@ import InnerImageZoom from "react-inner-image-zoom";
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import "./Product.css"
+
 const Product = () => {
   const dispatch = useDispatch();
 
@@ -27,7 +29,7 @@ const Product = () => {
       <InnerImageZoom
         src={thumbs[index]}
         zoomSrc={bigPics[index]}
-        zoomScale={0.7}
+        zoomScale={0.9}
         fullscreenOnMobile={true}
         mobileBreakpoint={990}
         zoomType={"hover"}
