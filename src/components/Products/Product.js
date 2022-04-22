@@ -40,6 +40,7 @@ const Product = () => {
   const product = useSelector((s) => s.products.current);
 
   const thumbs = product.thumbs ? product.thumbs.trim().split(",") : [];
+  const bigPics = product.thumbs ? product.big_pics.trim().split(",") : [];
   const size = product.thumbs ? product.size.trim().split(",") : [];
   const availableSizes = product.thumbs
     ? product.available_sizes.trim().split(",")
@@ -54,7 +55,7 @@ const Product = () => {
         <div className="row">
           <div className="col-lg-6">
             <div className="product-pic-zoom">
-              <img className="product-big-img" src={product.picture} alt="" />
+              <img className="product-big-img" src={bigPics[0]} alt="" />
             </div>
             <div
               className="product-thumbs"
@@ -66,15 +67,9 @@ const Product = () => {
                   className="product-thumbs-track"
                   {...thumbsCarouselOptions}
                 >
-                  {
-                    <div key={-1} className="pt active" data-imgbigurl={product.picture}>
-                      <img src={product.picture} alt="" />
-                    </div>
-                  }
-
                   {thumbs.map((th, index) => {
                     return (
-                      <div key={index} className="pt" data-imgbigurl={th}>
+                      <div key={index} className={`pt ${index === 0 ? 'active' : ''}`} data-imgbigurl={bigPics[index]}>
                         <img src={th} alt="" />
                       </div>
                     );
