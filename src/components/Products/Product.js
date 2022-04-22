@@ -41,10 +41,7 @@ const Product = () => {
 
   const thumbs = product.thumbs ? product.thumbs.trim().split(",") : [];
   const bigPics = product.thumbs ? product.big_pics.trim().split(",") : [];
-  const size = product.thumbs ? product.size.trim().split(",") : [];
-  const availableSizes = product.thumbs
-    ? product.available_sizes.trim().split(",")
-    : [];
+  const sizes = product.sizes ? product.sizes : []
 
   return (
     <section className="product-section content-field">
@@ -84,13 +81,13 @@ const Product = () => {
             <div className="fw-size-choose">
               <p>Размер</p>
 
-              {availableSizes.map((s) => {
-                const isDisabled = !size.includes(s)
+              {sizes.map((s) => {
+                
                 return (
                   <div key={s}
-                    className={`sc-item ${isDisabled ? "disable" : ""}`}
+                    className={`sc-item`}
                   >
-                    <input type="radio" name="sc" id={s} disabled={isDisabled}/>
+                    <input type="radio" name="sc" id={s}/>
                     <label htmlFor={s}>{s}</label>
                   </div>
                 );
