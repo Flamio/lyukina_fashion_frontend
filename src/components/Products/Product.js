@@ -1,6 +1,9 @@
 import ReactOwlCarousel from "react-owl-carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../../actions";
+import InnerImageZoom from "react-inner-image-zoom";
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
+import { useState } from "react";
 
 const Product = () => {
   const thumbsCarouselOptions = {
@@ -30,18 +33,25 @@ const Product = () => {
     },
   };
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const addToCartHandler = (event) => {
-    dispatch(CartActions.putProduct(product.id))
-    event.preventDefault()
-  }
+    dispatch(CartActions.putProduct(product.id));
+    event.preventDefault();
+  };
 
   const product = useSelector((s) => s.products.current);
 
+  const [currentPictureIndex, setCurrentPictureIndex] = useState(0)
+
   const thumbs = product.thumbs ? product.thumbs.trim().split(",") : [];
   const bigPics = product.thumbs ? product.big_pics.trim().split(",") : [];
-  const sizes = product.sizes ? product.sizes : []
+  const sizes = product.sizes ? product.sizes : [];
+
+  const onThumbClickHandler = (event) => {
+    setCurrentPictureIndex(event.target.id)
+    event.preventDefault()
+  }
 
   return (
     <section className="product-section content-field">
@@ -52,7 +62,14 @@ const Product = () => {
         <div className="row">
           <div className="col-lg-6">
             <div className="product-pic-zoom">
-              <img className="product-big-img" src={bigPics[0]} alt="" />
+              <InnerImageZoom
+                src={thumbs[currentPictureIndex]}
+                zoomSrc={bigPics[currentPictureIndex]}
+                zoomScale={0.7}
+                fullscreenOnMobile={true}
+                mobileBreakpoint={990}
+                zoomType={"hover"}
+              />
             </div>
             <div
               className="product-thumbs"
@@ -66,8 +83,13 @@ const Product = () => {
                 >
                   {thumbs.map((th, index) => {
                     return (
-                      <div key={index} className={`pt ${index === 0 ? 'active' : ''}`} data-imgbigurl={bigPics[index]}>
-                        <img src={th} alt="" />
+                      <div
+                        key={index}
+                        className={`pt ${Number(index) === Number(currentPictureIndex) ? "active" : ""}`}
+                        >
+                          {console.log(index)}
+                          {console.log(currentPictureIndex)}
+                          <img id={index} onClick={onThumbClickHandler} src={th} alt="" />
                       </div>
                     );
                   })}
@@ -82,12 +104,9 @@ const Product = () => {
               <p>Размер</p>
 
               {sizes.map((s) => {
-                
                 return (
-                  <div key={s}
-                    className={`sc-item`}
-                  >
-                    <input type="radio" name="sc" id={s}/>
+                  <div key={s} className={`sc-item`}>
+                    <input type="radio" name="sc" id={s} />
                     <label htmlFor={s}>{s}</label>
                   </div>
                 );
