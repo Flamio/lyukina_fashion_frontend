@@ -1,42 +1,47 @@
 import React from "react";
 import MainCarouselItem from "./MainCarouselItem";
+import { Carousel } from "react-responsive-carousel";
 
-import "owl.carousel/dist/assets/owl.carousel.css";
-import "owl.carousel/dist/assets/owl.theme.default.css";
-
-import './carousel.css'
-import ReactOwlCarousel from "react-owl-carousel";
+import "./carousel.css";
 
 export const MainCarousel = () => {
+  const onRenderItem = (node, options) => {
+    if (node.props.id === 1)
+    return (
+      <MainCarouselItem
+          picture={node.props.src}
+          minPrice={5000}
+          header="Новое поступление!!"
+          description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"
+        />
+    )
+    if (node.props.id === 2)
+    return (
+      <MainCarouselItem
+          picture={node.props.src}
+          minPrice={5000}
+          header="Новое поступление!!"
+          description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"
+        />
+    )
+  };
 
-  const options = {
-    loop: true,
-    margin: 0,
-    nav: true,
-    items: 1,
-    dots: true,
-    animateOut: 'fadeOut',
-    animateIn: 'fadeIn',
-    navText: ['<i class="flaticon-left-arrow-1"></i>',
-      '<i class="flaticon-right-arrow-1"></i>'],
-    smartSpeed: 1200,
-    autoplay: true
-  }
+  return (
+    <section className="hero-section">
+      <Carousel
+        renderItem={onRenderItem}
+        autoPlay
+        showThumbs={false}
+        infiniteLoop
+        showStatus={false}
+        className={"hero-slider"}
+        interval={3000}
+      >
+        <img id={1} src="img/bg-3.jpg" alt="" />
+        <img id={2} src="img/bg.jpg" alt="" />
+      </Carousel>
+    </section>
+  );
+};
 
-    return (<section className="hero-section">
-
-
-      <ReactOwlCarousel className="hero-slider" {...options}>
-
-        <MainCarouselItem picture='img/bg-3.jpg' minPrice={5000}
-        header="Новое поступление!!"
-        description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"/>
-
-        <MainCarouselItem picture='/img/bg.jpg' minPrice={5000}
-                          header="Новое поступление!!"
-                          description="ывпавпаьлтмывлоатмволыалВАЛАОТАМОЛАТМОАЛТМОЛ"/>
-      </ReactOwlCarousel>
-    </section>)
-}
-
-export default MainCarousel
+export default MainCarousel;
