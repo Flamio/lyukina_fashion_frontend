@@ -51,42 +51,6 @@ export const NewsCarousel = () => {
                 alt=""
               />
             ))}
-            {newProducts.map((p, index) => (
-              <img
-                id={p.id}
-                src={p.picture}
-                isNew={p.new}
-                key={p.id}
-                picture={p.picture}
-                description={p.name}
-                price={p.price}
-                alt=""
-              />
-            ))}
-            {newProducts.map((p, index) => (
-              <img
-                id={p.id}
-                src={p.picture}
-                isNew={p.new}
-                key={p.id}
-                picture={p.picture}
-                description={p.name}
-                price={p.price}
-                alt=""
-              />
-            ))}
-            {newProducts.map((p, index) => (
-              <img
-                id={p.id}
-                src={p.picture}
-                isNew={p.new}
-                key={p.id}
-                picture={p.picture}
-                description={p.name}
-                price={p.price}
-                alt=""
-              />
-            ))}
           </Carousel>
         </div>
       </section>
