@@ -7,14 +7,14 @@ import { configureFakeBackend } from "./fake-backend/FakeBackend";
 import { BrowserRouter,  Route, Routes } from 'react-router-dom'
 import Loader from "./components/Loader/Loader";
 import { ProductPage } from './pages/ProductPage';
-import ContactsModal from "./ContactsModal";
-import { AddToCartModal } from './components';
+import {AddToCartModal, ContactsModal, ProductSettingsModal } from './components/Modal'
 
 render(
   <Provider store={Store}>
     <Loader />
     <ContactsModal />
     <AddToCartModal />
+    <ProductSettingsModal/>
     <BrowserRouter>
       <Routes>
         <Route path={"/"} element={<Main />} />

@@ -1,9 +1,9 @@
 import {Button, Modal} from "react-bootstrap";
 import {GeoObject, Map, YMaps} from "react-yandex-maps";
 import {useDispatch, useSelector} from "react-redux";
-import {ModalWindowActions} from "./actions";
+import {ModalWindowActions} from "../../actions";
 
-export default function ContactsModal() {
+export function ContactsModal() {
 
   const contactsView = useSelector(state => state.modalWindow.contacts)
   const dispatch = useDispatch()

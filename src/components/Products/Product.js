@@ -2,17 +2,19 @@ import { Carousel } from "react-responsive-carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../../actions";
 import InnerImageZoom from "react-inner-image-zoom";
+import { useState } from "react";
 
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import "./Product.css"
+import { Toggler } from "../Toggler";
 
 const Product = () => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (event) => {
-    dispatch(CartActions.putProduct(product.id));
+    dispatch(CartActions.putProduct({id: product.id, quantity, size: sizes[size-1].id }));
     event.preventDefault();
   };
 
@@ -20,7 +22,10 @@ const Product = () => {
 
   const thumbs = product.thumbs ? product.thumbs.trim().split(",") : [];
   const bigPics = product.thumbs ? product.big_pics.trim().split(",") : [];
-  const sizes = product.sizes ? product.sizes : [];
+  const sizes = product.sizes ? product.sizes : [{name: "..."}];
+
+  const [size, setSize] = useState(1);
+  const [quantity, setQuantity] = useState(1);
 
   const onRenderItem = (item, options) => {
     const index = item.props.id;
@@ -58,19 +63,9 @@ const Product = () => {
           <div className="col-lg-6 product-details">
             <h2 className="p-title">{product.name}</h2>
             <h3 className="p-price">{product.price} ₽</h3>
-            <div className="fw-size-choose">
-              <p>Размер</p>
-
-              {sizes.map((s) => {
-                return (
-                  <div key={s} className={`sc-item`}>
-                    <input type="radio" name="sc" id={s} />
-                    <label htmlFor={s}>{s}</label>
-                  </div>
-                );
-              })}
-            </div>
-            <a href="#" className="site-btn" onClick={addToCartHandler}>
+            <Toggler onChange={(value) => {setQuantity(value)}} textAlign='left' text="Количество" numeric style={{marginTop:'40px'}}/>
+            <Toggler onChange={(value) => {setSize(value)}} textAlign='left' text="Размер" data={sizes.map(s => s.name)} />
+            <a href="#" className="site-btn" style={{marginTop: '35px'}} onClick={addToCartHandler}>
               Добавить в корзину
             </a>
             <div id="accordion" className="accordion-area">

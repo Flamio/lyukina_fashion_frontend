@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ModalWindowActions } from "../actions";
+import { ModalWindowActions } from "../../actions";
 import {Button, Modal} from "react-bootstrap";
 
 export const AddToCartModal = () => {

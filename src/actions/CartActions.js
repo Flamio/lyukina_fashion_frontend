@@ -5,10 +5,10 @@ export const CartActions = {
   putProduct,
 };
 
-function putProduct(id) {
+function putProduct(product) {
 
     const returnState = () => {
-        return { type: CartConstants.PUT_PRODUCT, id }
+        return { type: CartConstants.PUT_PRODUCT, product }
     }
 
     return dispatch => {

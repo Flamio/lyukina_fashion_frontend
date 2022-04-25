@@ -3,7 +3,8 @@ import {ModalWindowConstants} from "../constants/ModalWindowConstants";
 export const ModalWindowActions = {
   contacts,
   loading,
-  addToCart
+  addToCart,
+  productSettings
 }
 
 function contacts(state) {
@@ -16,5 +17,9 @@ function loading(state) {
 
 function addToCart(state) {
   return {type: ModalWindowConstants.ADD_TO_CART, state}
+}
+
+function productSettings(state, id) {
+  return {type: ModalWindowConstants.PRODUCT_SETTINGS, state, id}
 }
 

@@ -6,7 +6,7 @@ export const CartReducer = (state = {products: []}, action) => {
             console.log("add to cart")
           return {
               ...state,
-              products: state.products.concat(action.id)
+              products: state.products.concat(action.product)
           }
     
         default:

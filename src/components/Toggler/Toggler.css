@@ -1,0 +1,72 @@
+.quiantity .pro-qty {
+    width: 94px;
+    height: 36px;
+    border: 1px solid #ddd;
+    padding: 0 15px;
+    border-radius: 40px;
+    float: left;
+}
+
+.quiantity {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.quantity .pro-qty input {
+    width: 28px;
+    float: left;
+    border: none;
+    height: 36px;
+    line-height: 40px;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+    background-color: transparent;
+    margin-top: 4px;
+}
+
+.quantity .pro-qty .qtybtn {
+    width: 15px;
+    display: block;
+    float: left;
+    line-height: 36px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 20px;
+    color: white;
+    width: 40px;
+    height: 40px;
+    color: white;
+    padding-top: 2px;
+    border-radius: 100%;
+    opacity: 0.5;
+    transition: opacity 500ms;
+}
+
+.quantity .pro-qty .qtybtn:hover {
+    opacity: 1;
+}
+
+.quantity .pro-qty .qtybtn.dec {
+    background: #000;
+    margin-right: 8px;
+}
+
+.quantity .pro-qty .qtybtn.inc {
+    background:  #f51167;
+    margin-left: 8px;   
+}
+
+.quantity #text {
+    margin-top: 3px;
+    font-size: 20px;
+}
+
+
