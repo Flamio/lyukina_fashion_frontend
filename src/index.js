@@ -8,13 +8,15 @@ import { BrowserRouter,  Route, Routes } from 'react-router-dom'
 import Loader from "./components/Loader/Loader";
 import { ProductPage } from './pages/ProductPage';
 import {AddToCartModal, ContactsModal, ProductSettingsModal } from './components/Modal'
+import { MobileScroll } from './components/MobileScroll';
 
 render(
   <Provider store={Store}>
     <Loader />
     <ContactsModal />
     <AddToCartModal />
-    <ProductSettingsModal/>
+    <MobileScroll />
+    <ProductSettingsModal />
     <BrowserRouter>
       <Routes>
         <Route path={"/"} element={<Main />} />
