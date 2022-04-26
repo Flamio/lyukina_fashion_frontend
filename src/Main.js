@@ -12,7 +12,7 @@ export default function Main() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(MainPageActions.getAll())
+    dispatch(MainPageActions.getAll(0))
   }, [dispatch])
 
   return (<div>

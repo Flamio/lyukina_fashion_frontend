@@ -2,27 +2,16 @@ import { Urls } from "../constants";
 import { helpers } from "./helpers";
 
 export const MainPageService = {
-  getAll,
-  getMore,
+  getAll
 };
 
-function getAll() {
+function getAll(page) {
   const requestOptions = {
     method: "GET",
   };
 
   return fetch(
-    Urls.MAIN_PAGE_SERVICE_URL + "?productsPage=0",
+    Urls.MAIN_PAGE_SERVICE_URL + "?productsPage="+page,
     requestOptions
   ).then(helpers.handleResponse);
-}
-
-function getMore() {
-  const requestOptions = {
-    method: "GET",
-  };
-
-  return fetch(Urls.MAIN_PAGE_SERVICE_URL + "/more", requestOptions).then(
-    helpers.handleResponse
-  );
 }
