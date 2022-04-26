@@ -4,7 +4,8 @@ import { ModalWindowActions } from "../../actions";
 
 const ProductItem = (props) => {
   const clickHandler = (event) => {
-    window.location.href = "/product/" + props.id;
+    console.log(props.pageName)
+    window.location.href = "/product/" + props.pageName;
     event.preventDefault();
   };
 

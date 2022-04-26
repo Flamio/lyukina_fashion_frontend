@@ -34,6 +34,7 @@ export const Products = () => {
               onEnter={() => setLoad(false)}
             >
               <ProductItem
+                pageName={p.pageName}
                 id={p.id}
                 isNew={p.new}
                 key={p.id}

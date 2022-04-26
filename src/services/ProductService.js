@@ -11,7 +11,7 @@ function get(id) {
     method: "GET",
   };
 
-  return fetch(Urls.PRODUCT_SERVICE_URL + "/" + id, requestOptions).then(
+  return fetch(Urls.PRODUCT_SERVICE_URL + "/by-page-name/" + id, requestOptions).then(
     helpers.handleResponse
   );
 }

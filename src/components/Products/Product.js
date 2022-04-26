@@ -88,18 +88,7 @@ const Product = () => {
                   data-parent="#accordion"
                 >
                   <div className="panel-body">
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Proin pharetra tempor so dales. Phasellus sagittis auctor
-                      gravida. Integer bibendum sodales arcu id te mpus. Ut
-                      consectetur lacus leo, non scelerisque nulla euismod nec.
-                    </p>
-                    <p>Approx length 66cm/26" (Based on a UK size 8 sample)</p>
-                    <p>Mixed fibres</p>
-                    <p>
-                      The Model wears a UK size 8/ EU size 36/ US size 4 and her
-                      height is 5'8"
-                    </p>
+                    {product.description}
                   </div>
                 </div>
               </div>

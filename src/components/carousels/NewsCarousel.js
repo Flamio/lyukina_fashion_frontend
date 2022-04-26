@@ -14,6 +14,7 @@ export const NewsCarousel = () => {
   const renderItem = (node, options) => {
     return (
         <ProductItem
+          pageName={node.props.pageName}
           id={node.props.id}
           isNew={node.props.new}
           picture={node.props.picture}
@@ -42,6 +43,7 @@ export const NewsCarousel = () => {
             {newProducts.map((p, index) => (
               <img
                 id={p.id}
+                pageName={p.pageName}
                 src={p.picture}
                 isNew={p.new}
                 key={p.id}
