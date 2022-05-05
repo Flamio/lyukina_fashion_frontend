@@ -3,10 +3,10 @@ import { ProductService } from "../services/ProductService";
 import { ModalWindowActions } from "./ModalWindowActions";
 
 export const ProductsActions = {
-  get,
+  getByPageName,
 };
 
-function get(id) {
+function getByPageName(pageName) {
   const success = (product) => {
     return {
       type: ProductsConstants.GET,
@@ -15,7 +15,7 @@ function get(id) {
   };
 
   return (dispatch) => {
-    ProductService.get(id).then((product) => {
+    ProductService.getByPageName(pageName).then((product) => {
       dispatch(ModalWindowActions.loading(false));
       dispatch(success(product));
     });

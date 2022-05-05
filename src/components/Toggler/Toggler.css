@@ -1,27 +1,10 @@
-.quiantity .pro-qty {
-    width: 94px;
-    height: 36px;
-    border: 1px solid #ddd;
-    padding: 0 15px;
-    border-radius: 40px;
-    float: left;
-}
 
-.quiantity {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center;
-    margin-bottom: 40px;
+.quantity {
+    margin-bottom: 8px;    
 }
 
 .quantity .pro-qty input {
-    width: 28px;
-    float: left;
+    width: 28px;    
     border: none;
     height: 36px;
     line-height: 40px;
@@ -33,9 +16,7 @@
 }
 
 .quantity .pro-qty .qtybtn {
-    width: 15px;
-    display: block;
-    float: left;
+    width: 15px;  
     line-height: 36px;
     cursor: pointer;
     text-align: center;
@@ -44,7 +25,6 @@
     width: 40px;
     height: 40px;
     color: white;
-    padding-top: 2px;
     border-radius: 100%;
     opacity: 0.5;
     transition: opacity 500ms;

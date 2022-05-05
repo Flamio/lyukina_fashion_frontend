@@ -4,7 +4,8 @@ export const ModalWindowActions = {
   contacts,
   loading,
   addToCart,
-  productSettings
+  productSettings,
+  removeFromCart
 }
 
 function contacts(state) {
@@ -21,5 +22,9 @@ function addToCart(state) {
 
 function productSettings(state, id) {
   return {type: ModalWindowConstants.PRODUCT_SETTINGS, state, id}
+}
+
+function removeFromCart(state, id, sizeId) {
+  return {type: ModalWindowConstants.REMOVE_FROM_CART, state, id, sizeId}
 }
 

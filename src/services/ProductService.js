@@ -2,18 +2,32 @@ import { Urls } from "../constants";
 import { helpers } from "./helpers";
 
 export const ProductService = {
-  get,
+  getByIds,
+  getByPageName,
   getSizes,
+  getSizeByIds,
 };
 
-function get(id) {
+function getByPageName(pageName) {
   const requestOptions = {
     method: "GET",
   };
 
-  return fetch(Urls.PRODUCT_SERVICE_URL + "/by-page-name/" + id, requestOptions).then(
-    helpers.handleResponse
-  );
+  return fetch(
+    Urls.PRODUCT_SERVICE_URL + "/by-page-name/" + pageName,
+    requestOptions
+  ).then(helpers.handleResponse);
+}
+
+function getByIds(ids) {
+  const requestOptions = {
+    method: "GET",
+  };
+
+  return fetch(
+    Urls.PRODUCT_SERVICE_URL + "/list/" + ids.map((id) => id + ","),
+    requestOptions
+  ).then(helpers.handleResponse);
 }
 
 function getSizes(productId) {
@@ -22,6 +36,16 @@ function getSizes(productId) {
   };
   return fetch(
     Urls.PRODUCT_SERVICE_URL + "/" + productId + "/sizes",
+    requestOptions
+  ).then(helpers.handleResponse);
+}
+
+function getSizeByIds(ids) {
+  const requestOptions = {
+    method: "GET",
+  };
+  return fetch(
+    Urls.SIZE_SERVICE_URL + "/list/" + ids.map((id) => id + ","),
     requestOptions
   ).then(helpers.handleResponse);
 }

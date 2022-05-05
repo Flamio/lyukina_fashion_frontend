@@ -21,7 +21,7 @@ export const AddToCartModal = () => {
         <Button variant="secondary" onClick={handleClose}>
           Продолжить покупки
         </Button>
-        <Button variant="primary">Перейти в корзину</Button>
+        <Button variant="primary">Перейти к оформлению</Button>
       </Modal.Footer>
     </Modal>
   );

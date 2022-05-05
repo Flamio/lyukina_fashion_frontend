@@ -5,7 +5,8 @@ export function ModalWindowReducer(
     contacts: false,
     loading: true,
     addToCart: false,
-    productSettings: false,
+    productSettings: {},
+    removeFromCart: {}
   },
   action
 ) {
@@ -32,6 +33,12 @@ export function ModalWindowReducer(
       return {
         ...state,
         productSettings: { show: action.state, id: action.id }
+      };
+
+    case ModalWindowConstants.REMOVE_FROM_CART:
+      return {
+        ...state,
+        removeFromCart: { show: action.state, id: action.id, sizeId: action.sizeId }
       };
 
     default:

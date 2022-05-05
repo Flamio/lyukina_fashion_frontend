@@ -1,0 +1,97 @@
+.popover {
+    max-width: 1000px;
+    text-align: center;
+    z-index: 9;
+}
+
+.popover-header {
+    background-color: #282828;
+    color: aliceblue;
+}
+
+.popover-body {
+    padding-top: 20px;
+}
+
+.product-container {
+    margin-bottom: 10px;
+}
+
+.product-container .toggler {
+    padding-left: 90px;
+}
+
+.product-container .btn-outline-dark {
+    border: none;
+}
+
+.product-container .btn-outline-dark:hover {
+    color: aliceblue;
+    background-color: #282828;
+}
+
+.product-container .cart-thumb {
+    width: 100px;
+    height: 150px;
+
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.cart-total {
+    padding-top: 20px;
+    padding-bottom: 10px;
+    font-weight: bold;
+    font-size: large;
+}
+
+.cart-total .total-value {
+    text-align: right;
+
+}
+
+.cart-total .total-header {
+    text-align: left;
+}
+
+.popover-header .btn-outline-primary:not(:disabled):not(.disabled):active {
+    box-shadow: none;
+    border-color: #f51167;
+    background-color: #f51167;
+}
+
+.close-button:hover {
+    border-color: aliceblue;
+    background-color: #f51167;
+    border-color: #f51167;
+}
+
+@media only screen and (min-width: 1000px) {
+    .popover {
+        width: 750px
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .popover {
+        width: 300px
+    }
+
+    .product-container .toggler {
+        margin-top: 20px;
+    }
+
+    .product-container .cart-thumb {
+        margin: auto;
+        width: 60%;
+    }
+
+    .product-container .trash-button {
+        opacity: 0;
+    }
+
+    .cart-container {
+        height: 500px;
+        overflow: scroll;
+    }
+}

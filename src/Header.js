@@ -1,9 +1,12 @@
-import { useSelector } from "react-redux";
+
+import { Cart } from "./components/Cart";
 import MainMenu from "./components/MainMenu/MainMenu";
+
+import "./Header.css";
+
 
 const Header = () => {
 
-  const cart = useSelector(s => { console.log(s); return s.cart })
 
   return (
     <header className="header-section">
@@ -20,15 +23,7 @@ const Header = () => {
               </a>
             </div>
             <div className="col-6 col-lg-10 mt-auto mb-auto">
-              <div className="user-panel pull-right">
-                <div className="up-item">
-                  <div className="shopping-card">
-                    <i className="flaticon-bag"></i>
-                    <span>{cart.products.length}</span>
-                  </div>
-                  <a href="#">Корзина</a>
-                </div>
-              </div>
+              <Cart/>
             </div>
           </div>
         </div>
@@ -38,4 +33,4 @@ const Header = () => {
   );
 };
 
-export default Header
+export default Header;

@@ -12,7 +12,7 @@ export const ProductPage = () => {
   const params = useParams()
 
   useEffect(() => {
-        dispatch(ProductsActions.get(params.id))  
+        dispatch(ProductsActions.getByPageName(params.id))  
       }
   )
 

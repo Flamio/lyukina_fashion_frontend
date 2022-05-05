@@ -3,6 +3,8 @@ import { ModalWindowActions } from "./ModalWindowActions";
 
 export const CartActions = {
   putProduct,
+  removeProduct,
+  changeQuantity
 };
 
 function putProduct(product) {
@@ -16,4 +18,12 @@ function putProduct(product) {
         dispatch(ModalWindowActions.addToCart(true))        
     }
   
+}
+
+function removeProduct(id, sizeId) {
+    return {type: CartConstants.REMOVE_PRODUCT, id, sizeId}
+}
+
+function changeQuantity(id, sizeId, newQuantity) {    
+    return {type: CartConstants.CHANGE_QUANITITY, id, sizeId, newQuantity}
 }
