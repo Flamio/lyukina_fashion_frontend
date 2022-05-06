@@ -1,6 +1,6 @@
 .mobile-scroll {
     position: fixed;
-    z-index: 9999;
+    z-index: 8;
     left: 80%;
     top: 90%;
     background: #000;
