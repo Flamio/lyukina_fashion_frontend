@@ -41,7 +41,7 @@ export const Products = () => {
                 picture={p.picture}
                 description={p.name}
                 price={p.price}
-                grid="col-lg-3 col-sm-6"
+                grid="col-lg-4"
               />
             </CSSTransition>
             

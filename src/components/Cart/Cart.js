@@ -33,6 +33,7 @@ export const Cart = () => {
     ProductService.getSizeByIds(sizeIds).then((sizes) => setCartSizes(sizes));
   }, [cart.products]);
 
+
   const CartPopover = (
     <Popover id="popover-basic">
       <Popover.Header>Корзина</Popover.Header>
@@ -51,6 +52,7 @@ export const Cart = () => {
                   >
                     <div className="row">
                       <div
+                        onClick={() => window.location.href="/product/"+product.page_name}
                         className="col-lg-2 cart-thumb"
                         style={{ backgroundImage: `url(${thumb})` }}
                       ></div>

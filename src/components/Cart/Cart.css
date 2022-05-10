@@ -34,8 +34,11 @@
     width: 100px;
     height: 150px;
 
-    background-size: cover;
+    background-size: cover;    
     background-repeat: no-repeat;
+    background-position-y: center;
+
+    cursor: pointer;
 }
 
 .cart-total {
@@ -91,7 +94,7 @@
     }
 
     .cart-container {
-        height: 500px;
+        height: 400px;
         overflow: scroll;
     }
 }

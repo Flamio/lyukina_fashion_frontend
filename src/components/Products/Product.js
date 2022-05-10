@@ -34,7 +34,7 @@ const Product = () => {
       <InnerImageZoom
         src={thumbs[index]}
         zoomSrc={bigPics[index]}
-        zoomScale={0.9}
+        zoomScale={0.6}
         fullscreenOnMobile={true}
         mobileBreakpoint={990}
         zoomType={"hover"}
