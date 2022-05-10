@@ -1,6 +1,7 @@
 import {ProductsConstants, CategoriesConstants} from "../constants";
 import {MainPageService} from "../services";
 import {ModalWindowActions} from "./ModalWindowActions";
+import { ProductsActions } from "./ProductsActions";
 
 export const MainPageActions = {
   getAll
@@ -32,6 +33,7 @@ function getAll(page, category) {
     MainPageService.getAll(page, category).then(mainPageDto => {
       dispatch(ModalWindowActions.loading(false));
       dispatch(categoriesSuccess(mainPageDto))
+      dispatch(ProductsActions.changeProductPage(page))
       return dispatch(productsSuccess(mainPageDto))
     })
   }

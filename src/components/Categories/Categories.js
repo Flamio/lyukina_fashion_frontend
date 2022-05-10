@@ -1,24 +1,25 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { MainPageActions } from "../../actions";
+import { MainPageActions, ProductsActions } from "../../actions";
+import { CategoriesActions } from "../../actions/CategoriesActions";
 
 import './Categories.css'
 
 const Categories = () => {
-  const categories = useSelector((c) => c.categories);
+  const categories = useSelector((c) => c.categories.data);
 
-  const [currentCategory, setCurrentCategory] = useState(null)
+  const currentCategory = useSelector((c) => c.categories.current);
 
   const dispatch = useDispatch()
 
   const onCategoryClick = (event, id) => {
+    dispatch(ProductsActions.clearProducts())
     if (currentCategory === id) {
-      setCurrentCategory(-1)
+      dispatch(CategoriesActions.changeCategory(null))      
       dispatch(MainPageActions.getAll(0)); 
       event.preventDefault()
       return;
     }
-    setCurrentCategory(id)
+    dispatch(CategoriesActions.changeCategory(id))
     dispatch(MainPageActions.getAll(0, id)); 
     event.preventDefault()
   }

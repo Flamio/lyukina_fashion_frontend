@@ -4,6 +4,8 @@ import { ModalWindowActions } from "./ModalWindowActions";
 
 export const ProductsActions = {
   getByPageName,
+  changeProductPage,
+  clearProducts
 };
 
 function getByPageName(pageName) {
@@ -20,4 +22,17 @@ function getByPageName(pageName) {
       dispatch(success(product));
     });
   };
+}
+
+function changeProductPage(page) {
+  return {
+    type: ProductsConstants.CHANGE_PAGE,
+    page
+  }
+}
+
+function clearProducts() {
+  return {
+    type: ProductsConstants.CLEAR_PRODUCTS,
+  }
 }

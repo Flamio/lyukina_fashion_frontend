@@ -10,13 +10,15 @@ import Categories from "../Categories/Categories";
 export const Products = () => {
   const allProducts = useSelector((state) => state.products.other);
   const more = useSelector((state) => state.products.more);
+  const page = useSelector((state) => state.products.page);
+  const currentCategory = useSelector((state) => state.categories.current)
   const dispatcher = useDispatch();
 
   const [load, setLoad] = useState(false);
 
   const handleProductsMore = (event) => {
-    // setLoad(true);
-    // dispatcher(MainPageActions.getProductsMore());
+     setLoad(true);
+     dispatcher(MainPageActions.getAll(page+1, currentCategory));
     event.preventDefault();
   };
 
