@@ -2,8 +2,6 @@
 import { Cart } from "./components/Cart";
 import MainMenu from "./components/MainMenu/MainMenu";
 
-import "./Header.css";
-
 
 const Header = () => {
 

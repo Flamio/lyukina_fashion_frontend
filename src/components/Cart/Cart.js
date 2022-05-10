@@ -9,6 +9,8 @@ import { ProductService } from "../../services";
 import { Toggler } from "../Toggler";
 import { useSelector } from "react-redux";
 
+import "./Cart.css"
+
 export const Cart = () => {
   const cart = useSelector((s) => {
     return s.cart;
