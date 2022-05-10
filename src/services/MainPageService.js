@@ -5,13 +5,19 @@ export const MainPageService = {
   getAll
 };
 
-function getAll(page) {
+function getAll(page, category) {
   const requestOptions = {
     method: "GET",
   };
 
+  const baseUrl = Urls.MAIN_PAGE_SERVICE_URL + "?productsPage="+page;
+
+  const url = category ? baseUrl+"&categoryId="+category : baseUrl
+
+  console.log(url)
+
   return fetch(
-    Urls.MAIN_PAGE_SERVICE_URL + "?productsPage="+page,
+    url,
     requestOptions
   ).then(helpers.handleResponse);
 }

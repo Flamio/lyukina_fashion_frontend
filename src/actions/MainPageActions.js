@@ -6,7 +6,7 @@ export const MainPageActions = {
   getAll
 }
 
-function getAll(page) {
+function getAll(page, category) {
 
   const productsSuccess = (mainPageDto) => {
 
@@ -28,7 +28,8 @@ function getAll(page) {
   }
 
   return dispatch => {
-    MainPageService.getAll(page).then(mainPageDto => {
+    console.log(category)
+    MainPageService.getAll(page, category).then(mainPageDto => {
       dispatch(ModalWindowActions.loading(false));
       dispatch(categoriesSuccess(mainPageDto))
       return dispatch(productsSuccess(mainPageDto))

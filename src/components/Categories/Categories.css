@@ -1,0 +1,38 @@
+.product-filter-section {
+	padding-bottom: 60px;
+}
+
+.product-filter-section .section-title {
+	margin-bottom: 70px;
+}
+
+.product-filter-menu {
+	list-style: none;
+	margin: 0 -10px;
+	padding-bottom: 15px;
+}
+
+.product-filter-menu li {
+	margin: 0 10px 10px;
+	display: inline-block;
+}
+
+.product-filter-menu li a {
+	color: #ffffff;
+	font-size: 12px;
+	font-weight: 700;
+	text-transform: uppercase;
+	background: #000000;
+	display: block;
+	width: 100%;
+	padding: 10px 34px;
+	border-radius: 31px;
+}
+
+.product-filter-menu li a:hover {
+	background: #f51167;
+}
+
+.product-filter-menu li a.active {
+	background: #f51167;
+}
