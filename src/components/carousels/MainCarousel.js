@@ -5,6 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import "./carousel.css";
 
 export const MainCarousel = () => {
+
   const onRenderItem = (node, options) => {
     if (node.props.id === 1)
     return (
@@ -36,6 +37,7 @@ export const MainCarousel = () => {
         showStatus={false}
         className={"hero-slider"}
         interval={3000}
+        swipeable={false}
       >
         <img id={1} src="img/bg-3.jpg" alt="" />
         <img id={2} src="img/bg.jpg" alt="" />

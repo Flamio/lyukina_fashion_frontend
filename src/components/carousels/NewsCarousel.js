@@ -38,6 +38,7 @@ export const NewsCarousel = () => {
             emulateTouch
             renderItem={renderItem}
             showThumbs={false}
+            swipeable={false}
             className="product-slider"
           >
             {newProducts.map((p, index) => (

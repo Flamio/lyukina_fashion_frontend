@@ -8,14 +8,12 @@ import { BrowserRouter,  Route, Routes } from 'react-router-dom'
 import Loader from "./components/Loader/Loader";
 import { ProductPage } from './pages/ProductPage';
 import {AddToCartModal, ContactsModal, ProductSettingsModal, RemoveFromCartModal } from './components/Modal'
-import { MobileScroll } from './components/MobileScroll';
 
 render(
   <Provider store={Store}>
     <Loader />
     <ContactsModal />
     <AddToCartModal />
-    <MobileScroll />
     <ProductSettingsModal />
     <RemoveFromCartModal/>
     <BrowserRouter>

@@ -91,6 +91,16 @@ img {
 	border-color: black;
 }
 
+.popover .btn-primary {
+	background: #f51167;
+	border-color: black;
+}
+
+.popover .btn-secondary {
+	background: black;
+	border-color: black;
+}
+
 input:focus,
 select:focus,
 button:focus,

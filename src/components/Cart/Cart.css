@@ -32,7 +32,7 @@
 
 .product-container .cart-thumb {
     width: 100px;
-    height: 150px;
+    height: 100px;
 
     background-size: cover;    
     background-repeat: no-repeat;
@@ -86,7 +86,6 @@
 
     .product-container .cart-thumb {
         margin: auto;
-        width: 60%;
     }
 
     .product-container .trash-button {

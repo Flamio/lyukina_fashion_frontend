@@ -4,8 +4,13 @@ import { CartActions } from "../../actions";
 import InnerImageZoom from "react-inner-image-zoom";
 import { useState } from "react";
 
+
+import "../carousels/carousel.css"
+
 import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+
 
 import "./Product.css"
 import { Toggler } from "../Toggler";
@@ -50,7 +55,7 @@ const Product = () => {
         </div>
         <div className="row">
           <div className="col-lg-6">
-            <Carousel renderItem={onRenderItem} showStatus={false}>
+            <Carousel renderItem={onRenderItem} showStatus={false} swipeable={false}>
               {thumbs.map((th, index) => {
                 return (
                   <div key={index} id={index}>

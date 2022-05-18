@@ -60,4 +60,21 @@
   margin: 0;
 }
 
+.carousel.carousel-slider .control-arrow {
+  margin: 1px;
+  background: black !important;
+  opacity: 0.5 !important;
+  width: 50px;
+  top: 40% !important;
+  bottom: 50% !important;
+  height: 50px;
+  border-radius: 30px;
+}
 
+.carousel.carousel-slider .control-arrow.control-prev {
+  padding-right: 10px;
+}
+
+.carousel.carousel-slider .control-arrow:hover {
+opacity: 0.8 !important;
+}
