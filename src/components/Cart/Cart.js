@@ -42,7 +42,7 @@ export const Cart = () => {
             <div className="cart-container">
               {cart.products.map((p) => {
                 const product = cartProducts.find((cp) => cp.id === p.id);
-                const thumb = product ? product.thumbs.split(",")[0] : "";
+                const thumb = product ? product.cart_thumb : ""
                 const size = cartSizes.find((cs) => cs.id === p.size);
                 return product && size ? (
                   <div

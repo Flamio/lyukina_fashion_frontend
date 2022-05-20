@@ -30,7 +30,7 @@ export const Products = () => {
         <TransitionGroup className="row justify-content-center">
           {allProducts.map((p) => (
             <CSSTransition
-              timeout={1000}
+              timeout={2000}
               key={p.id}
               classNames={"product-items"}
               onEnter={() => setLoad(false)}

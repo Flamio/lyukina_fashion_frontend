@@ -25,8 +25,8 @@ const Product = () => {
 
   const product = useSelector((s) => s.products.current);
 
-  const thumbs = product.thumbs ? product.thumbs.trim().split(",") : [];
-  const bigPics = product.thumbs ? product.big_pics.trim().split(",") : [];
+  const thumbs = product.thumbs ? product.thumbs: [];
+  const bigPics = product.big_pics ? product.big_pics : [];
   const sizes = product.sizes ? product.sizes : [{name: "..."}];
 
   const [size, setSize] = useState(1);
