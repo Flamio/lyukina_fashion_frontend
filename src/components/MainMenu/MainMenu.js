@@ -21,21 +21,7 @@ export default function MainMenu() {
 
   const menu = () => {
     return (<div className="col-12">
-          <div className="col-lg-1 col-sm-12 menu-item"><a href="#">Платья</a></div>
-          <div className="col-lg-3 col-sm-12"><a href="#">Свадебные
-            платья</a>
-          </div>
-          <div className="col-lg-2 col-sm-12 menu-item"><a href="#">Топы
-            <span className="new">New</span>
-          </a></div>
-          <div className="col-lg-2 col-sm-12 menu-item"><a href="#">Корсеты</a>
-          </div>
-          <div className="col-lg-2 col-sm-12 menu-item"><a href="#">Мужское</a>
-            <ul className="sub-menu">
-              <li><a href="#">Футбики</a></li>
-              <li><a href="#">Штаны</a></li>
-            </ul>
-          </div>
+
           <div className="col-lg-2 col-sm-12 menu-item"><a href="#"
                                                  onClick={showContacts}>Контакты</a>
           </div>

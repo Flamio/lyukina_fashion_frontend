@@ -51,7 +51,7 @@ const Product = () => {
     <section className="product-section content-field">
       <div className="container">
         <div className="back-link">
-          <a href="#"> &lt;&lt; Назад в категорию</a>
+          <a href="/"> &lt;&lt; Назад</a>
         </div>
         <div className="row">
           <div className="col-lg-6">

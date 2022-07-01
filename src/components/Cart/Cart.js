@@ -33,6 +33,11 @@ export const Cart = () => {
     ProductService.getSizeByIds(sizeIds).then((sizes) => setCartSizes(sizes));
   }, [cart.products]);
 
+  const closeButton = (
+  <Button onClick={(e) => document.getElementById("cartButton").click()} style={{width: '100%', marginTop: "5px"}} variant="secondary">
+  Закрыть
+</Button>)
+
   const CartPopover = (
     <Popover id="popover-basic">
       <Popover.Header>Корзина</Popover.Header>
@@ -133,9 +138,7 @@ export const Cart = () => {
             </div>
             <div className="row">
               <div className="col-lg-4 col-md-12">
-              <Button style={{width: '100%', marginTop: "5px"}} variant="secondary">
-                  Закрыть
-                </Button>
+                  {closeButton}
               </div>
               <div className="col-lg-8 col-md-12">
                 <Button style={{width: '100%', marginTop: "5px"}} className="pull-right" variant="primary">
@@ -145,7 +148,10 @@ export const Cart = () => {
             </div>
           </div>
         ) : (
-          <p>Корзина пуста</p>
+          <div>
+            <p>Корзина пуста</p>
+            {closeButton}
+          </div>          
         )}
       </Popover.Body>
     </Popover>
@@ -153,7 +159,7 @@ export const Cart = () => {
 
   return (
     <OverlayTrigger trigger={"click"} placement="bottom" overlay={CartPopover}>
-      <div className="user-panel pull-right">
+      <div className="user-panel pull-right" id="cartButton">
         <div className="up-item">
           <div className="shopping-card">
             <i className="flaticon-bag"></i>
