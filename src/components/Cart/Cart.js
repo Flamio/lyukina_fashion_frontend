@@ -21,6 +21,15 @@ export const Cart = () => {
   const [cartProducts, setCartProducts] = useState([]);
   const [cartSizes, setCartSizes] = useState([]);
 
+  const [bright, setBright] = useState(false)
+  const brightPeriod = 600;
+  const [opened, setOpened] = useState(false)
+
+  setTimeout(() => {
+    if (!opened)
+      setBright(!bright)
+  }, brightPeriod)
+
   useEffect(() => {
     if (cart.products.length <= 0) {
       return;
@@ -159,7 +168,7 @@ export const Cart = () => {
 
   return (
     <OverlayTrigger trigger={"click"} placement="bottom" overlay={CartPopover}>
-      <div className="user-panel pull-right" id="cartButton">
+      <div className={`user-panel pull-right ${cart.products.length > 0 && bright ? 'bright' : ''}`} id="cartButton">
         <div className="up-item">
           <div className="shopping-card">
             <i className="flaticon-bag"></i>

@@ -14,7 +14,7 @@ export const AddToCartModal = () => {
   return (
     <Modal show={addToCart} onHide={handleClose}>
       <Modal.Header>
-        <Modal.Title></Modal.Title>
+        <Modal.Title>Подтвердите действие</Modal.Title>
       </Modal.Header>
       <Modal.Body>Товар добавлен в корзину</Modal.Body>
       <Modal.Footer>

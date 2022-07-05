@@ -20,9 +20,6 @@ const Header = () => {
                 />
               </a>
             </div>
-            <div className="col-6 col-lg-10 mt-auto mb-auto">
-              <Cart/>
-            </div>
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import { BrowserRouter,  Route, Routes } from 'react-router-dom'
 import Loader from "./components/Loader/Loader";
 import { ProductPage } from './pages/ProductPage';
 import {AddToCartModal, ContactsModal, ProductSettingsModal, RemoveFromCartModal } from './components/Modal'
+import { Cart } from './components/Cart';
 
 render(
   <Provider store={Store}>
@@ -16,6 +17,7 @@ render(
     <AddToCartModal />
     <ProductSettingsModal />
     <RemoveFromCartModal/>
+    <Cart/>
     <BrowserRouter>
       <Routes>
         <Route path={"/"} element={<Main />} />
