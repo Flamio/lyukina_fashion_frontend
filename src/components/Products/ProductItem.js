@@ -37,7 +37,7 @@ const ProductItem = (props) => {
           </div>
         </div>
         <div className="pi-text">
-          <h6>{props.price} ₽</h6>
+          <h6>{props.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽</h6>
           <p>{props.description}</p>
         </div>
       </div>

@@ -26,8 +26,11 @@ export const Cart = () => {
   const [opened, setOpened] = useState(false)
 
   setTimeout(() => {
-    if (!opened)
-      setBright(!bright)
+    if (opened) {
+      setBright(true)
+      return
+    }    
+    setBright(!bright)
   }, brightPeriod)
 
   useEffect(() => {
@@ -77,7 +80,7 @@ export const Cart = () => {
                         <p>{size.name}</p>
                       </div>
                       <div className="col-lg-2">
-                        {(product.price * p.quantity).toFixed(2)} ₽
+                        {((product.price * p.quantity).toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") } ₽
                       </div>
                       <div className="toggler col-lg-4">
                         <Toggler
@@ -139,7 +142,7 @@ export const Cart = () => {
                       Number(prev) +
                       Number(product ? product.price : 0) *
                         Number(current.quantity)
-                    ).toFixed(2);
+                    ).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
                   }, 0)}{" "}
                   ₽
                 </div>
@@ -168,7 +171,7 @@ export const Cart = () => {
 
   return (
     <OverlayTrigger trigger={"click"} placement="bottom" overlay={CartPopover}>
-      <div className={`user-panel pull-right ${cart.products.length > 0 && bright ? 'bright' : ''}`} id="cartButton">
+      <div onClick={() => setOpened(!opened)} className={`user-panel pull-right ${cart.products.length > 0 && bright ? 'bright' : ''}`} id="cartButton">
         <div className="up-item">
           <div className="shopping-card">
             <i className="flaticon-bag"></i>

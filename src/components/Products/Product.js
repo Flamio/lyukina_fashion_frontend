@@ -67,7 +67,7 @@ const Product = () => {
           </div>
           <div className="col-lg-6 product-details">
             <h2 className="p-title">{product.name}</h2>
-            <h3 className="p-price">{product.price} ₽</h3>
+            <h3 className="p-price">{product.price && product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽</h3>
             <Toggler onChange={(value) => {setQuantity(value)}} textAlign='left' text="Количество" numeric style={{marginTop:'40px'}}/>
             <Toggler onChange={(value) => {setSize(value)}} textAlign='left' text="Размер" data={sizes.map(s => s.name)} />
             <a href="#" className="site-btn" style={{marginTop: '35px'}} onClick={addToCartHandler}>
