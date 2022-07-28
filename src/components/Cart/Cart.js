@@ -142,8 +142,8 @@ export const Cart = () => {
                       Number(prev) +
                       Number(product ? product.price : 0) *
                         Number(current.quantity)
-                    ).toFixed(2).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-                  }, 0)}{" "}
+                    ).toFixed(2)
+                  }, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                   ₽
                 </div>
               </div>
