@@ -1,6 +1,7 @@
 
 import { Cart } from "./components/Cart";
 import MainMenu from "./components/MainMenu/MainMenu";
+import { ViewConstants } from "./constants";
 
 
 const Header = () => {
@@ -11,7 +12,7 @@ const Header = () => {
       <div className="header-top">
         <div className="container">
           <div className="row">
-            <div className="col-6 col-lg-2 text-center text-lg-left">
+            <div className="col-12 col-lg-4 text-center text-lg-left">
               <a href="/" className="site-logo">
                 <img
                   src="/img/logo.svg"
@@ -19,6 +20,10 @@ const Header = () => {
                   style={{ width: "130px", height: "130px" }}
                 />
               </a>
+
+            </div>
+            <div className="col-12 mt-lg-4 mb-2 col-lg-6 text-center text-lg-left">
+              <h2>{ViewConstants.CONTACT_PHONE}</h2>
             </div>
           </div>
         </div>

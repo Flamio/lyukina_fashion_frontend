@@ -523,10 +523,11 @@ ol {
 
 .hero-slider .hs-item .offer-card {
 	position: absolute;
+	padding-top: 35px !important;
 	right: 0;
 	top: 230px;
-	width: 162px;
-	height: 162px;
+	width: 182px;
+	height: 182px;
 	border-radius: 50%;
 	background: #f51167;
 	text-align: center;

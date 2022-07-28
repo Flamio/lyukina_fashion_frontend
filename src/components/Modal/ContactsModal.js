@@ -2,6 +2,7 @@ import {Button, Modal} from "react-bootstrap";
 import {GeoObject, Map, YMaps} from "react-yandex-maps";
 import {useDispatch, useSelector} from "react-redux";
 import {ModalWindowActions} from "../../actions";
+import { ViewConstants } from "../../constants";
 
 export function ContactsModal() {
 
@@ -23,7 +24,7 @@ export function ContactsModal() {
           Телефон:
         </div>
         <div className="col-6">
-          8 (964) 181-75-67
+          {ViewConstants.CONTACT_PHONE}
         </div>
       </div>
       <div className="row mt-3">
@@ -31,7 +32,7 @@ export function ContactsModal() {
           Адрес:
         </div>
         <div className="col-6">
-          г. Ижевск, ул Пушкина, д. Колотушкина, 157
+          г. Ижевск, ул Революционная, 217
         </div>
       </div>
       <div className="row mt-3">
