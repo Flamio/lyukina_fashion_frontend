@@ -18,7 +18,6 @@ function getByPageName(pageName) {
 
   return (dispatch) => {
     ProductService.getByPageName(pageName).then((product) => {
-      dispatch(ModalWindowActions.loading(false));
       dispatch(success(product));
     });
   };

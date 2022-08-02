@@ -19,6 +19,7 @@ export const LoadingImage = (props) => {
         image.onload = () => {
             setCurrentSrc(props.src)
             setLoading(false)
+            props.onLoad && props.onLoad()
             console.log("loaded")
         }
     }, [])

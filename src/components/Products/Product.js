@@ -1,8 +1,9 @@
 import { Carousel } from "react-responsive-carousel";
 import { useDispatch, useSelector } from "react-redux";
-import { CartActions } from "../../actions";
+import { CartActions, ModalWindowActions } from "../../actions";
 import { useState } from "react";
 import { LoadingImage } from "../LoadingImage";
+
 
 
 import "../carousels/carousel.css"
@@ -30,21 +31,31 @@ const Product = () => {
 
   const [size, setSize] = useState(1);
   const [quantity, setQuantity] = useState(1);
+  let loadingImages = 0;
+
+
+  const imageCount = ((bigPics.length + thumbs.length))
+
+  const onImageLoad = () => {    
+    loadingImages = loadingImages + 1
+    console.log("count " + loadingImages + " imageCount " + imageCount)
+    if (loadingImages === imageCount)
+      dispatch(ModalWindowActions.loading(false));
+  }
 
   const onRenderItem = (item, options) => {
     const index = item.props.id;
 
     return (
-       <LoadingImage src={bigPics[index]} zoom/>
+      <LoadingImage onLoad={() => onImageLoad()} src={bigPics[index]} zoom />
     );
   };
 
-  const onRenderThumbs = () =>
-  {
+  const onRenderThumbs = () => {
     console.log("render thumbs")
-    return thumbs.map((th, index) => 
-      <LoadingImage src={th} key={index}/>
-      )
+    return thumbs.map((th, index) =>
+      <LoadingImage onLoad={() => onImageLoad()} src={th} key={index} />
+    )
   }
 
   return (
@@ -58,8 +69,8 @@ const Product = () => {
             <Carousel renderItem={onRenderItem} renderThumbs={onRenderThumbs} showStatus={false} swipeable={false}>
               {thumbs.map((th, index) => {
                 return (
-                  <div key={index} id={index}>                    
-                    <LoadingImage src={th}/>
+                  <div key={index} id={index}>
+                    <LoadingImage src={th} />
                   </div>
                 );
               })}
