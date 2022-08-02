@@ -1,6 +1,6 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import { ModalWindowActions } from "../../actions";
+import { LoadingImage } from "../LoadingImage";
 
 const ProductItem = (props) => {
   const clickHandler = (event) => {
@@ -15,7 +15,6 @@ const ProductItem = (props) => {
     event.stopPropagation();
 
     dispatch(ModalWindowActions.productSettings(true, props.id));
-  
 
     event.preventDefault();
 
@@ -24,11 +23,11 @@ const ProductItem = (props) => {
 
   return (
     <div className={props.grid ? props.grid : ""} onClick={clickHandler}>
-      <div className="product-item" style={{width: "320px", margin: "auto"}}>
+      <div className="product-item" style={{ width: "320px", margin: "auto" }}>
         <div className="pi-pic">
           {props.isNew && <div className="tag-new">New</div>}
 
-          <img src={props.picture} alt="" />
+          <LoadingImage src={props.picture}/>
           <div className="pi-links">
             <a href="#" className="add-card" onClick={cartClickHandler}>
               <i className="flaticon-bag" />

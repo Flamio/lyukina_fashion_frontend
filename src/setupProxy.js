@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.use(
     '/api',
     createProxyMiddleware({
-      target: 'http://localhost:8080/',
+      target: 'http://v1295395.hosted-by-vdsina.ru/',
       changeOrigin: true,
     })
   );

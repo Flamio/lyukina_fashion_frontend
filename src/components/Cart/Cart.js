@@ -10,6 +10,7 @@ import { Toggler } from "../Toggler";
 import { useSelector } from "react-redux";
 
 import "./Cart.css";
+import { LoadingImage } from "../LoadingImage";
 
 export const Cart = () => {
   const cart = useSelector((s) => {
@@ -29,7 +30,7 @@ export const Cart = () => {
     if (opened) {
       setBright(true)
       return
-    }    
+    }
     setBright(!bright)
   }, brightPeriod)
 
@@ -46,9 +47,9 @@ export const Cart = () => {
   }, [cart.products]);
 
   const closeButton = (
-  <Button onClick={(e) => document.getElementById("cartButton").click()} style={{width: '100%', marginTop: "5px"}} variant="secondary">
-  Закрыть
-</Button>)
+    <Button onClick={(e) => document.getElementById("cartButton").click()} style={{ width: '100%', marginTop: "5px" }} variant="secondary">
+      Закрыть
+    </Button>)
 
   const CartPopover = (
     <Popover id="popover-basic">
@@ -66,21 +67,19 @@ export const Cart = () => {
                     className="container product-container"
                     key={Math.random()}
                   >
-                    <div className="row">
-                      <div
-                        onClick={() =>
-                          (window.location.href =
-                            "/product/" + product.page_name)
-                        }
-                        className="col-lg-2 cart-thumb"
-                        style={{ backgroundImage: `url(${thumb})` }}
-                      ></div>
+                    <div className="row" >
+                      <div className="col-lg-2 cart-thumb" onClick={() =>
+                      (window.location.href =
+                        "/product/" + product.page_name)
+                      }>
+                        <LoadingImage src={thumb} />
+                      </div>
                       <div className="col-lg-2">
                         <p>{product.name}</p>
                         <p>{size.name}</p>
                       </div>
                       <div className="col-lg-2">
-                        {((product.price * p.quantity).toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") } ₽
+                        {((product.price * p.quantity).toFixed(2)).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽
                       </div>
                       <div className="toggler col-lg-4">
                         <Toggler
@@ -141,7 +140,7 @@ export const Cart = () => {
                     return (
                       Number(prev) +
                       Number(product ? product.price : 0) *
-                        Number(current.quantity)
+                      Number(current.quantity)
                     ).toFixed(2)
                   }, 0).toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")}{" "}
                   ₽
@@ -150,10 +149,10 @@ export const Cart = () => {
             </div>
             <div className="row">
               <div className="col-lg-4 col-md-12">
-                  {closeButton}
+                {closeButton}
               </div>
               <div className="col-lg-8 col-md-12">
-                <Button style={{width: '100%', marginTop: "5px"}} className="pull-right" variant="primary">
+                <Button style={{ width: '100%', marginTop: "5px" }} className="pull-right" variant="primary">
                   Перейти к оформлению
                 </Button>
               </div>
@@ -163,7 +162,7 @@ export const Cart = () => {
           <div>
             <p>Корзина пуста</p>
             {closeButton}
-          </div>          
+          </div>
         )}
       </Popover.Body>
     </Popover>

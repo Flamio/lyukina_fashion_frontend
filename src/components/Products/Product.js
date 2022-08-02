@@ -1,13 +1,12 @@
 import { Carousel } from "react-responsive-carousel";
 import { useDispatch, useSelector } from "react-redux";
 import { CartActions } from "../../actions";
-import InnerImageZoom from "react-inner-image-zoom";
 import { useState } from "react";
+import { LoadingImage } from "../LoadingImage";
 
 
 import "../carousels/carousel.css"
 
-import "react-inner-image-zoom/lib/InnerImageZoom/styles.min.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
@@ -19,15 +18,15 @@ const Product = () => {
   const dispatch = useDispatch();
 
   const addToCartHandler = (event) => {
-    dispatch(CartActions.putProduct({id: product.id, quantity, size: sizes[size-1].id }));
+    dispatch(CartActions.putProduct({ id: product.id, quantity, size: sizes[size - 1].id }));
     event.preventDefault();
   };
 
   const product = useSelector((s) => s.products.current);
 
-  const thumbs = product.thumbs ? product.thumbs: [];
+  const thumbs = product.thumbs ? product.thumbs : [];
   const bigPics = product.big_pics ? product.big_pics : [];
-  const sizes = product.sizes ? product.sizes : [{name: "..."}];
+  const sizes = product.sizes ? product.sizes : [{ name: "..." }];
 
   const [size, setSize] = useState(1);
   const [quantity, setQuantity] = useState(1);
@@ -36,16 +35,17 @@ const Product = () => {
     const index = item.props.id;
 
     return (
-      <InnerImageZoom
-        src={thumbs[index]}
-        zoomSrc={bigPics[index]}
-        zoomScale={0.6}
-        fullscreenOnMobile={true}
-        mobileBreakpoint={990}
-        zoomType={"hover"}
-      />
+       <LoadingImage src={bigPics[index]} zoom/>
     );
   };
+
+  const onRenderThumbs = () =>
+  {
+    console.log("render thumbs")
+    return thumbs.map((th, index) => 
+      <LoadingImage src={th} key={index}/>
+      )
+  }
 
   return (
     <section className="product-section content-field">
@@ -55,11 +55,11 @@ const Product = () => {
         </div>
         <div className="row">
           <div className="col-lg-6">
-            <Carousel renderItem={onRenderItem} showStatus={false} swipeable={false}>
+            <Carousel renderItem={onRenderItem} renderThumbs={onRenderThumbs} showStatus={false} swipeable={false}>
               {thumbs.map((th, index) => {
                 return (
-                  <div key={index} id={index}>
-                    <img id={index} src={th} alt="" />
+                  <div key={index} id={index}>                    
+                    <LoadingImage src={th}/>
                   </div>
                 );
               })}
@@ -68,9 +68,9 @@ const Product = () => {
           <div className="col-lg-6 product-details">
             <h2 className="p-title">{product.name}</h2>
             <h3 className="p-price">{product.price && product.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")} ₽</h3>
-            <Toggler onChange={(value) => {setQuantity(value)}} textAlign='left' text="Количество" numeric style={{marginTop:'40px'}}/>
-            <Toggler onChange={(value) => {setSize(value)}} textAlign='left' text="Размер" data={sizes.map(s => s.name)} />
-            <a href="#" className="site-btn" style={{marginTop: '35px'}} onClick={addToCartHandler}>
+            <Toggler onChange={(value) => { setQuantity(value) }} textAlign='left' text="Количество" numeric style={{ marginTop: '40px' }} />
+            <Toggler onChange={(value) => { setSize(value) }} textAlign='left' text="Размер" data={sizes.map(s => s.name)} />
+            <a href="#" className="site-btn" style={{ marginTop: '35px' }} onClick={addToCartHandler}>
               Добавить в корзину
             </a>
             <div id="accordion" className="accordion-area">
