@@ -10,19 +10,7 @@ export const LoadingImage = (props) => {
 
 
     const [loading, setLoading] = useState(true)
-    const [currentSrc, setCurrentSrc] = useState(Placeholder)
     const [zoomButton, setZoomButton] = useState(true)
-
-    useEffect(() => {
-        const image = new Image()
-        image.src = props.src
-        image.onload = () => {
-            setCurrentSrc(props.src)
-            setLoading(false)
-            props.onLoad && props.onLoad()
-            console.log("loaded")
-        }
-    }, [])
 
     const onZoom = (zoomIn, reset) => {
         if (reset) {
@@ -34,14 +22,20 @@ export const LoadingImage = (props) => {
         }
     }
 
+    const onLoad = () => {
+        setLoading(false)
+        props.onLoad && props.onLoad()
+    }
+
     return (
 
         <div>
-            {!props.zoom &&
+            {                
+            !props.zoom &&
                 <img style={{
                     opacity: loading ? 0.5 : 1,
                     transition: "opacity 1s linear"
-                }} src={currentSrc} alt="" />
+                }} src={props.src} onLoad={onLoad} alt="" />
             }
 
             {(props.zoom) &&
@@ -51,6 +45,9 @@ export const LoadingImage = (props) => {
                     }}
                     limitToBounds={true}
                     wheel={{
+                        disabled: true
+                    }}
+                    pinch={{
                         disabled: true
                     }}
                     panning={{
@@ -64,10 +61,12 @@ export const LoadingImage = (props) => {
                         <React.Fragment>
                             <div onClick={() => onZoom(zoomIn)} style={{ cursor: "pointer" }}>
                                 <TransformComponent>
-                                    <img src={currentSrc} style={{
-                                        opacity: loading ? 0.5 : 1,
-                                        transition: "opacity 1s linear"
-                                    }} />
+                                    <img src={props.src}
+                                        onLoad={onLoad}
+                                        style={{
+                                            opacity: loading ? 0.5 : 1,
+                                            transition: "opacity 1s linear"
+                                        }} />
                                 </TransformComponent>
                             </div>
                             <Button onClick={() => onZoom(zoomIn, resetTransform)} style={{

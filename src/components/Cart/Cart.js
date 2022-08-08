@@ -59,6 +59,7 @@ export const Cart = () => {
           <div>
             <div className="cart-container">
               {cart.products.map((p) => {
+                console.log("map popover")
                 const product = cartProducts.find((cp) => cp.id === p.id);
                 const thumb = product ? product.cart_thumb : ""
                 const size = cartSizes.find((cs) => cs.id === p.size);
@@ -72,7 +73,7 @@ export const Cart = () => {
                       (window.location.href =
                         "/product/" + product.page_name)
                       }>
-                        <LoadingImage src={thumb} />
+                        <LoadingImage src={thumb}/>
                       </div>
                       <div className="col-lg-2">
                         <p>{product.name}</p>

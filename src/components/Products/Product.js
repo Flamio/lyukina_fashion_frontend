@@ -36,9 +36,9 @@ const Product = () => {
 
   const imageCount = ((bigPics.length + thumbs.length))
 
-  const onImageLoad = () => {    
+  const onImageLoad = () => {
     loadingImages = loadingImages + 1
-    console.log("count " + loadingImages + " imageCount " + imageCount)
+    console.log("count " + loadingImages + " imageCount " + imageCount)    
     if (loadingImages === imageCount)
       dispatch(ModalWindowActions.loading(false));
   }
@@ -46,15 +46,20 @@ const Product = () => {
   const onRenderItem = (item, options) => {
     const index = item.props.id;
 
+    console.log("render item")    
     return (
       <LoadingImage onLoad={() => onImageLoad()} src={bigPics[index]} zoom />
     );
   };
 
-  const onRenderThumbs = () => {
-    console.log("render thumbs")
+  const onRenderThumbs = () => {    
     return thumbs.map((th, index) =>
-      <LoadingImage onLoad={() => onImageLoad()} src={th} key={index} />
+    {
+
+      console.log("render thumb")
+      return (
+      <LoadingImage onLoad={() => onImageLoad()} src={th} key={index} />)
+    }
     )
   }
 
@@ -70,7 +75,6 @@ const Product = () => {
               {thumbs.map((th, index) => {
                 return (
                   <div key={index} id={index}>
-                    <LoadingImage src={th} />
                   </div>
                 );
               })}
